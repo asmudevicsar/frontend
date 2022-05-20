@@ -4,8 +4,13 @@ export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="w-full">
-        <div className="xl:container mx-auto px-2 justify-between">
+
+      <nav className="w-full mx-auto">
+        <div className='flex justify-end'>
+          <div className='bg-purpledark pt-3 pb-2 pr-6 pl-5 text-white rounded-bl-2xl'>Síguenos</div>
+          
+        </div>
+        <div className="container px-2 justify-between flex">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-purpledark" href="#pablo">
               Logo
