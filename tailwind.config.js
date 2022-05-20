@@ -4,7 +4,12 @@ module.exports = {
   content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     colors: {
-      ...colors,
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#ffffff',
+      purpledark: '#76226E',
+      purplelight: '#B144A7',
+      gray: '#606060',
     },
   },
 };
