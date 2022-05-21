@@ -1,0 +1,43 @@
+header {
+  width: 100%;
+  background: '#ccc';
+}
+header ul {
+  display: flex;
+  justify-content: flex-end;
+}
+header ul li {
+  list-style: none;
+  position: relative;
+  transition: 0.7s;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+header ul li:last-child {
+  border-right: none;
+}
+header ul li a {
+  text-decoration: none;
+  padding: 0 20px;
+}
+header ul li ul {
+  position: absolute;
+  top: 50px;
+  left: 25px;
+  background: #fff;
+  display: block;
+  width: 250px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+header ul li ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: none;
+}
+header ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
