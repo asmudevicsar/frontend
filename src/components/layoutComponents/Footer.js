@@ -1,24 +1,52 @@
-import React from 'react'
+import React from 'react';
+import SocialLinksOnlyIcons from './SocialLinksOnlyIcons';
+import { HiOutlineMailOpen } from 'react-icons/hi';
+import { FaRegCommentDots } from 'react-icons/fa';
+import { BsPhoneVibrate } from 'react-icons/bs';
+import { RiRoadMapLine } from 'react-icons/ri';
 
 export default function Footer() {
   return (
-    <footer class="container mx-auto p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" class="hover:underline">Flowbite™</a>. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
-        </li>
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contact</a>
-        </li>
-    </ul>
-</footer>
-  )
+    <footer class="block mx-auto bg-white rounded-lg shadow md:items-center md:justify-between dark:bg-gray-800">
+      <div class="container grid-container grid grid-cols-5 py-14">
+        <div class="item1 col-span-5 sm:col-span-1 m-auto">
+
+        <img className="" src="http://localhost:3000/images/logoblanco.png" alt="logoimage" />
+
+        </div>
+        <div class="item2 col-span-5 sm:col-span-4 mt-8">
+          <h3 className="text-center font-bold text-purpledark text-2xl">¿Necesitas comunicarte con nosotros?</h3>
+          <p className="text-center font-bold text-[#606060] w-3/5 m-auto text-center">Contáctanos a través de nuestros canales de servicio al cliente</p>
+          <div className="container gap-8 columns-1 sm:columns-4 mt-10">
+            <div>
+              <HiOutlineMailOpen className="m-auto w-12 h-12 text-purpledark" />
+              <h3 className="text-center font-bold text-purpledark text-xl pt-4">E-mail</h3>
+              <p className="text-sm font-bold text-[#606060] w-4/5 m-auto text-center">Conoce nuestros correos para más información.</p>
+            </div>
+            <div>
+              <FaRegCommentDots className="m-auto w-12 h-12 text-purpledark" /> <h3 className="text-center font-bold text-purpledark text-xl pt-4">Preguntanos</h3>
+              <p className="text-sm font-bold text-[#606060] w-4/5 m-auto text-center">Conoce los medios de consulta que tenemos para ti.</p>
+            </div>
+            <div>
+              <BsPhoneVibrate className="m-auto w-12 h-12 text-purpledark" /> <h3 className="text-center font-bold text-purpledark text-xl pt-4">Contáctanos</h3>
+              <p className="text-sm font-bold text-[#606060] w-4/5 m-auto text-center">Conoce nuestras líneas de atención telefónica</p>
+            </div>
+            <div>
+              <RiRoadMapLine className="m-auto w-12 h-12 text-purpledark" /> <h3 className="text-center font-bold text-purpledark text-xl pt-4">Oficinas</h3>
+              <p className="text-sm font-bold text-[#606060] w-4/5 m-auto text-center">Ubica nuestros puntos de atención.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-purplelight py-4">
+        <div className="container  grid grid-cols-2 gap-1 justify-evenly">
+          <div className="float-right text-white text-sm">Derechos Reservados ASMUDEVICSAR</div>
+          <div className="justify-start mt-0.5">
+            <SocialLinksOnlyIcons />
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
