@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialLinksOnlyIcons from './SocialLinksOnlyIcons';
+import SocialLinksOnlyIcons from '@components/generalComponents/SocialLinks/SocialLinksOnlyIcons';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { FaRegCommentDots } from 'react-icons/fa';
 import { BsPhoneVibrate } from 'react-icons/bs';
@@ -7,8 +7,8 @@ import { RiRoadMapLine } from 'react-icons/ri';
 
 export default function Footer() {
   return (
-    <footer class="block mx-auto bg-white rounded-lg shadow md:items-center md:justify-between dark:bg-gray-800">
-      <div class="container grid-container grid grid-cols-5 py-14">
+    <footer class="block mx-auto bg-white rounded-lg  md:items-center md:justify-between dark:bg-gray-800">
+      <div class="container grid-container grid grid-cols-5 pt-2 pb-14">
         <div class="item1 col-span-5 sm:col-span-1 m-auto">
 
         <img className="" src="http://localhost:3000/images/logoblanco.png" alt="logoimage" />

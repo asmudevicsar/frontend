@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { FaCaretDown, FaHome, FaUsers, FaTasks, FaPhoneAlt, FaPhotoVideo, FaBullhorn } from 'react-icons/fa';
-import SocialLinks from './SocialLinks';
+import SocialLinks from '@components/generalComponents/SocialLinks/SocialLinks';
 
 export default function UlStyle({ hasClassMenuItemsResponsive }) {
   return (

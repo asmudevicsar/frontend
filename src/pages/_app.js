@@ -4,14 +4,11 @@ import '@styles/home.css';
 import '@styles/index.css';
 
 import MainLayout from '@layout/MainLayout';
-
 function MyApp({ Component, pageProps }) {
   return (
-    
-      <MainLayout>
+    <MainLayout>
         <Component {...pageProps} />
-      </MainLayout>
-    
+    </MainLayout>
   );
 }
 
