@@ -9,11 +9,13 @@ import SmoothScroll from '@common/SmoothScroll';
 export default function Home() {
   return (
     <>
+      <SmoothScroll>
         <BannerHome />
         <QuienesSomos />
         <CategoriesProject />
         <CarrouselGallery />
         <Notices />
+      </SmoothScroll>
     </>
   );
 }

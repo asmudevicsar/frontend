@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import useWindowSize from 'hooks/useWindowSize';
 
+import useWindowSize from '../hooks/useWindowSize';
 
 const SmoothScroll = ({ children }) => {
   // 1.
@@ -20,7 +20,7 @@ const SmoothScroll = ({ children }) => {
   // 4.
   useEffect(() => {
     setBodyHeight();
-  }, [windowSize.height]);
+  }, [windowSize?.height]);
 
   const setBodyHeight = () => {
     document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height}px`;
