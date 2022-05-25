@@ -22,7 +22,7 @@ export default function UlStyle({ hasClassMenuItemsResponsive }) {
             <FaCaretDown className="ml-1" />
           </a>
           <ul className="subitem border-t-purpledark border-t-2">
-            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
+            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl hover:rounded-bl-2xl">
               <Link href="">Misión</Link>
             </li>
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">

@@ -40,9 +40,9 @@ export default function Footer() {
       </div>
 
       <div className="bg-purplelight py-4">
-        <div className="container  grid grid-cols-2 gap-1 justify-evenly">
-          <div className="float-right text-white text-sm">Derechos Reservados ASMUDEVICSAR</div>
-          <div className="justify-start mt-0.5">
+        <div className="container  grid grid-cols-1 sm:grid-cols-2 gap-1 justify-evenly">
+          <div className="float-right text-white text-sm mt-auto text-center sm:text-left">Derechos Reservados ASMUDEVICSAR</div>
+          <div className="justify-start mt-0.5 m-auto sm:m-0">
             <SocialLinksOnlyIcons />
           </div>
         </div>
