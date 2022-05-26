@@ -1,3 +1,15 @@
-.carrousel-gallery{
-    height: 600px;
+.carrousel-gallery {
+  height: 600px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #76226e !important;
+}
+@media screen and (max-width: 640px) {
+  .swiper {
+    height: 300px;
+  }
+  .carrousel-gallery {
+    height: 100%;
+  }
 }

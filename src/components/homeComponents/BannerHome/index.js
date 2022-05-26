@@ -32,10 +32,10 @@ export default function BannerHome() {
   return (
     <div className="container-slider mx-auto flex">
       <div className="box-buttons-banner z-50 absolute right-0">
-        <div className="bg-purpledark p-3 cursor-pointer duration-500 hover:bg-purplelight">
+        <div className="bg-purpledark p-2 sm:p-3 cursor-pointer duration-500 hover:bg-purplelight">
           <IoIosArrowForward onClick={nextSlide} className="text-white w-6	h-6" id="arrowforward" />
         </div>
-        <div className="bg-white p-3 cursor-pointer duration-500 hover:bg-[#E6E6E6]">
+        <div className="bg-white p-2 sm:p-3 cursor-pointer duration-500 hover:bg-[#E6E6E6]">
           <IoIosArrowBack onClick={prevSlide} className="text-purpledark w-6	h-6" />
         </div>
       </div>
@@ -44,8 +44,8 @@ export default function BannerHome() {
           <div style={{ backgroundImage: 'url(' + obj.img + ')' }} key={obj.id} className={slideIndex === index + 1 ? 'slide active-anim image-banner' : 'slide image-banner '}>
             <div className="box-cell">
               <div className="center-data">
-                <h3 className=" text-white text-6xl font-bold">{obj.title}</h3>
-                <p className="text-3xl font-medium text-white mt-2">{obj.subTitle}</p>
+                <h3 className="text-white text-3xl sm:text-5xl xl:text-6xl font-bold">{obj.title}</h3>
+                <p className="text-xl sm:text-3xl font-medium text-white mt-2">{obj.subTitle}</p>
               </div>
             </div>
           </div>

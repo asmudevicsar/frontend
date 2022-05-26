@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import UlStyle from './UlStyle';
 import SocialLinks from '@components/generalComponents/SocialLinks/SocialLinks';
-import {FaWhatsapp} from "react-icons/fa"; 
+import { FaWhatsapp } from 'react-icons/fa';
 export default function Header() {
   return (
     <>
-      <nav className="w-full mx-auto">
+      <nav className="w-full mx-auto border-b-2">
         <nav class="navbar-responsive bg-purpledark">
           <div class="navbar-container">
             <input type="checkbox" name="" id="" className="flex justify-end" />
@@ -19,10 +19,10 @@ export default function Header() {
           </div>
         </nav>
         <SocialLinks isResponsive={true} />
-        <div className="container px-2 justify-between flex my-2">
+        <div className="container justify-between flex my-2 container-header">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start z-50 div-logo">
             <Link href="" className=" text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-purpledark">
-              <img className="absolute logoresponsive top-1 w-28 h-24" src="http://localhost:3000/images/logo.png" alt="logoimage" />
+              <img className="absolute logoresponsive top-1 w-24 h-20 sm:w-28 sm:h-20" src="http://localhost:3000/images/logo.png" alt="logoimage" />
             </Link>
           </div>
           <div className={'lg:flex flex-grow items-center hidden'}>
@@ -32,9 +32,9 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <button className='btn-general-whatsapp bg-purpledark duration-500 fixed z-50 top-1/3 p-2 rounded-full right-6 hover:bg-purplelight hover:duration-500'>
-        <FaWhatsapp className='text-3xl text-white'/>
-      </button> 
+      <button className="btn-general-whatsapp bg-purpledark duration-500 fixed z-50 top-1/3 p-2 rounded-full right-1 sm:right-6 hover:bg-purplelight hover:duration-500">
+        <FaWhatsapp className="text-3xl text-white" />
+      </button>
     </>
   );
 }
