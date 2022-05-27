@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import url("../components/layoutComponents/Header/header.css");
+@import url("../components/generalComponents/BannerWithImageLeft/banner-with-image.css");
+@import url("../components//generalComponents/BannerInterno/banner-interno.css");
 * {
   font-family: 'Comfortaa', cursive;
 }

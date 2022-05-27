@@ -1,5 +1,5 @@
 .banner-interno {
-  height: 270px !important;
+  height: 300px !important;
 }
 .center-data {
   left: 50% !important;
@@ -7,14 +7,16 @@
 .banner-interno.image-banner {
   filter: none !important;
 }
-
+.banner-interno .center-data{
+  width: 50%;
+}
 .banner-interno h3 {
   color: white;
 }
 .banner-interno p {
   color: white;
 }
-.content-image {
+.banner-interno .content-image {
   bottom: 0;
   left: 0;
   height: 100%;
