@@ -1,0 +1,26 @@
+.banner-interno {
+  height: 270px !important;
+}
+.center-data {
+  left: 50% !important;
+}
+.banner-interno.image-banner {
+  filter: none !important;
+}
+
+.banner-interno h3 {
+  color: white;
+}
+.banner-interno p {
+  color: white;
+}
+.content-image {
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100% !important;
+  background: rgba(118, 34, 110, 0.6);
+  padding: 10px;
+  transition: all 500ms ease-in-out;
+  filter: none;
+}

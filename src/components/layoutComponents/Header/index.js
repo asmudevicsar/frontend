@@ -6,7 +6,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 export default function Header() {
   return (
     <>
-      <nav className="w-full mx-auto border-b-2">
+      <nav className="w-full mx-auto border-b-2 border-b-purplelight  ">
         <nav class="navbar-responsive bg-purpledark">
           <div class="navbar-container">
             <input type="checkbox" name="" id="" className="flex justify-end" />
