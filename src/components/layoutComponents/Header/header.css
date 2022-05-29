@@ -23,7 +23,7 @@ header ul li a {
 }
 header ul li ul {
   position: absolute;
-  top: 50px;
+  top: 58px;
   left: 21px;
   background: #fff;
   display: block;
@@ -41,7 +41,7 @@ header ul li:hover ul {
   opacity: 1;
   visibility: visible;
 }
-nav {
+header nav {
   position: fixed;
   background-color: #fff;
   z-index: 99999;
@@ -58,7 +58,6 @@ nav {
   transition: 0.6s;
 }
 .navbar-responsive {
-  box-shadow: 0px 5px 10px 0px #aaa;
   position: fixed;
   width: 100%;
   color: #000;

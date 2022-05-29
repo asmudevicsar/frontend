@@ -19,7 +19,7 @@
   .container-slider {
     height: 420px;
   }
-  .center-data {
+  .container-slider .center-data {
     width: 65% !important;
   }
 }

@@ -6,7 +6,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 export default function Header() {
   return (
     <>
-      <nav className="w-full mx-auto border-b-2 border-b-purplelight  ">
+      <nav className="w-full mx-auto border-b-2 border-b-purplelight z-50 fixed bg-[#fff]">
         <nav class="navbar-responsive bg-purpledark">
           <div class="navbar-container">
             <input type="checkbox" name="" id="" className="flex justify-end" />
@@ -20,7 +20,7 @@ export default function Header() {
         </nav>
         <SocialLinks isResponsive={true} />
         <div className="container justify-between flex my-2 container-header">
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start z-50 div-logo">
+          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start div-logo">
             <Link href="" className=" text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-purpledark">
               <img className="absolute logoresponsive top-1 w-24 h-20 sm:w-28 sm:h-20" src="http://localhost:3000/images/logo.png" alt="logoimage" />
             </Link>

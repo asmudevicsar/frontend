@@ -21,7 +21,7 @@ export default function UlStyle({ hasClassMenuItemsResponsive }) {
             <span className="ml-2 title-responsive title-responsive">Quienes Sómos</span>
             <FaCaretDown className="ml-1" />
           </a>
-          <ul className="subitem border-t-purpledark border-t-2">
+          <ul className="subitem z-10 border-t-purpledark border-t-2">
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
               <Link href="">Misión</Link>
             </li>
@@ -40,7 +40,7 @@ export default function UlStyle({ hasClassMenuItemsResponsive }) {
             <span className="ml-2 title-responsive">Proyectos</span>
             <FaCaretDown className="ml-1" />
           </a>
-          <ul className="subitem border-t-purpledark border-t-2">
+          <ul className="subitem z-10 border-t-purpledark border-t-3">
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
               <Link href="">Misión</Link>
             </li>

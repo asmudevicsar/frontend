@@ -1,0 +1,5 @@
+.box-shadow-category:hover {
+  
+  box-shadow: 2px 1px 10px 2px rgb(167 166 166);
+  transition: 0.5s;
+}

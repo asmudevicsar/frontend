@@ -8,7 +8,7 @@ export default function Notices() {
         <p className="text-[#606060] text-center font-bold text-lg mt-2 sm:mt-0">Mantente informado en un solo clic</p>
       </div>
       <div className="container sm:gap-6 columns-1 grid grid-cols-1  lg:grid-cols-3 ">
-        <div className="bg-white rounded-sm duration-500 hover:drop-shadow-2xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
+        <div className="bg-white rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
           <img className="w-full h-76" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
           <div className="p-3 sm:p-7 pb-0">
             <h3 className="text-center font-medium text-purpledark text-2xl">Proyecto mi generación es capaz</h3>
@@ -19,7 +19,7 @@ export default function Notices() {
             </div>
           </div>
         </div>
-        <div className="bg-white rounded-sm duration-500 hover:drop-shadow-2xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
+        <div className="bg-white rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
           <img className="w-full h-76" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
           <div className="p-3 sm:p-7 pb-0">
             <h3 className="text-center font-medium text-purpledark text-2xl">Proyecto mi generación es capaz</h3>
@@ -30,7 +30,7 @@ export default function Notices() {
             </div>
           </div>
         </div>
-        <div className="  bg-white rounded-sm duration-500 hover:drop-shadow-2xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
+        <div className="  bg-white rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
           <img className="w-full h-76" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
           <div className="p-3 sm:p-7 pb-0">
             <h3 className="text-center font-medium text-purpledark text-2xl">Proyecto de vivienda urbanización Guadalupe</h3>
