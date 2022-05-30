@@ -6,6 +6,8 @@
 @import url("./proyectos.css");
 @import url("./centro-prensa.css");
 @import url("../components/galleryImages/gallery-images.css");
+@import url("./quienessomos.css");
+@import url("./contactenos.css");
 * {
   font-family: 'Comfortaa', cursive;
 }

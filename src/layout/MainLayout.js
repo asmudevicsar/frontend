@@ -8,7 +8,7 @@ export default function MainLayout({ children }) {
     <div className="min-h-full">
       <Header />
       <main>
-        <div className="max-w-full mx-auto py-4">{children}</div>
+        <div className="max-w-full mx-auto py-4 pb-0">{children}</div>
       </main>
       <Footer />
     </div>

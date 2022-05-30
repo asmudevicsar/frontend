@@ -8,38 +8,36 @@ export default function UlStyle({ hasClassMenuItemsResponsive }) {
     <>
       <ul className={hasClassMenuItemsResponsive + ' flex flex-col lg:flex-row list-none lg:ml-auto'}>
         <li className="nav-item xl:mb-0">
-          <a className="px-2 py-2  flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500" href="#pablo">
+          <div className="px-2 py-2  flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-facebook-square text-lg leading-lg text-purpledark opacity-75"></i>
-            {hasClassMenuItemsResponsive && <FaHome />}
-            <span className="ml-2 title-responsive">Inicio</span>
-          </a>
+            {hasClassMenuItemsResponsive && (
+              <Link href="/">
+                <FaHome />
+              </Link>
+            )}
+            <Link href="/">
+              <span className="ml-2 title-responsive cursor-pointer">Inicio</span>
+            </Link>
+          </div>
         </li>
         <li className="nav-item">
-          <a className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500" href="#pablo">
+          <div href="/quienes-somos" className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-twitter text-base leading-lg text-purpledark opacity-75"></i>
             {hasClassMenuItemsResponsive && <FaUsers />}
-            <span className="ml-2 title-responsive title-responsive">Quienes Sómos</span>
-            <FaCaretDown className="ml-1" />
-          </a>
-          <ul className="subitem z-10 border-t-purpledark border-t-2">
-            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
-              <Link href="">Misión</Link>
-            </li>
-            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
-              <Link href="">Visión</Link>
-            </li>
-            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
-              <Link href="">Objetivos</Link>
-            </li>
-          </ul>
+            <Link href="/quienes-somos">
+              <span className="ml-2 title-responsive title-responsive cursor-pointer">Quienes Sómos</span>
+            </Link>
+          </div>
         </li>
         <li className="nav-item">
-          <a className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500" href="#pablo">
+          <div className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-pinterest text-lg leading-lg text-purpledark opacity-75"></i>
             {hasClassMenuItemsResponsive && <FaTasks />}
-            <span className="ml-2 title-responsive">Proyectos</span>
+            <Link href="/proyectos">
+              <span className="ml-2 title-responsive cursor-pointer">Proyectos</span>
+            </Link>
             <FaCaretDown className="ml-1" />
-          </a>
+          </div>
           <ul className="subitem z-10 border-t-purpledark border-t-3">
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
               <Link href="">Misión</Link>
@@ -53,26 +51,40 @@ export default function UlStyle({ hasClassMenuItemsResponsive }) {
           </ul>
         </li>
         <li className="nav-item">
-          <a className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500" href="#pablo">
+          <div className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-pinterest text-lg leading-lg text-purpledark opacity-75"></i>
             {hasClassMenuItemsResponsive && <FaBullhorn />}
-            <span className="ml-2 title-responsive">Centro de prensa</span>
+
+            <span className="ml-2 title-responsive cursor-pointer">Centro de prensa</span>
+
             <FaCaretDown className="ml-1" />
-          </a>
+          </div>
+          <ul className="subitem z-10 border-t-purpledark border-t-3">
+            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
+              <Link href="/centros-de-prensa/eventos-y-noticias">Eventos y noticias</Link>
+            </li>
+            <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl grid">
+              <Link href="/centros-de-prensa/comunicados-de-prensa">Comunicados de prensa</Link>
+            </li>
+          </ul>
         </li>
         <li className="nav-item">
-          <a className="px-2 py-2 flex items-center text-base font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500" href="#pablo">
+          <div className="px-2 py-2 flex items-center text-base font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-pinterest text-lg leading-lg text-purpledark opacity-75"></i>
             {hasClassMenuItemsResponsive && <FaPhotoVideo />}
-            <span className="ml-2 title-responsive">Galeria</span>
-          </a>
+            <Link href="/galeria">
+              <span className="ml-2 title-responsive cursor-pointer">Galeria</span>
+            </Link>
+          </div>
         </li>
         <li className="nav-item">
-          <a className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500" href="#pablo">
+          <div className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-pinterest text-lg leading-lg text-purpledark opacity-75"></i>
             {hasClassMenuItemsResponsive && <FaPhoneAlt />}
-            <span className="ml-2 title-responsive">Contáctenos</span>
-          </a>
+            <Link href="/contactenos">
+              <span className="ml-2 title-responsive cursor-pointer">Contáctenos</span>
+            </Link>
+          </div>
         </li>
         {hasClassMenuItemsResponsive && (
           <li>
