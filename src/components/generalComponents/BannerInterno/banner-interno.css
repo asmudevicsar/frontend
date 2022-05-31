@@ -1,7 +1,7 @@
 .banner-interno {
   height: 300px !important;
 }
-.center-data {
+.banner-interno .center-data {
   left: 50% !important;
 }
 .banner-interno.image-banner {

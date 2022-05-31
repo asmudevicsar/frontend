@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FormContact() {
   return (
-    <div class="container grid-container grid grid-cols-5 pt-2 pb-2">
+    <div class="container grid-container grid grid-cols-5 pt-2 pb-8">
       <div class="item1 col-span-5 sm:col-span-1 m-auto">
         <img className="" src="http://localhost:3000/images/logoblanco.png" alt="logoimage" />
       </div>
