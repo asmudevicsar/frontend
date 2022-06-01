@@ -8,8 +8,9 @@
 @import url("../components/galleryImages/gallery-images.css");
 @import url("./quienessomos.css");
 @import url("./contactenos.css");
+@import url("../components/homeComponents/Notices/notices-home.css");
 * {
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', cursive!important;
 }
 .container {
   width: 100%;

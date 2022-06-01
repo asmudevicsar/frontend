@@ -8,7 +8,7 @@ export default function BannerHome() {
   useEffect(() => {
     (async () => {
       const response = await getBannersPrincipal();
-      setBanners(response.data);
+      setBanners(response?.data);
     })();
   }, []);
 

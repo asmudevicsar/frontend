@@ -1,0 +1,14 @@
+.notices-home p,.notices-home span{
+    color:#606060!important;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    
+}
+.data-div{
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
