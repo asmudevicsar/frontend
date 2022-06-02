@@ -5,3 +5,10 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+.evento-noticia p {
+  color: #606060!important;
+}
+.evento-noticia span {
+  color: #606060!important;
+}
+

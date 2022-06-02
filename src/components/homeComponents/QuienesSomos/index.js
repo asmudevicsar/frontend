@@ -9,7 +9,7 @@ export default function QuienesSomos() {
   useEffect(() => {
     (async () => {
       const response = await getQuienesSomosData();
-      setData(response.attributes);
+      setData(response?.attributes);
     })();
   }, []);
 

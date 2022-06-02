@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getNoticesMaxThree } from 'api/noticesAPI';
+import { getNoticesMaxThree } from 'api/centroDePrensaAPI';
 import parse from 'html-react-parser';
 import Link from 'next/link';
 import { API_URL } from 'utils/constants';
@@ -10,7 +10,6 @@ export default function Notices() {
   useEffect(() => {
     (async () => {
       const response = await getNoticesMaxThree();
-      console.log('holaaa=>', response.data);
       setData(response?.data);
     })();
   }, []);

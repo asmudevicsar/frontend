@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getCategoriesProjectsData } from 'api/categoriesProjects';
+import { getCategoriesProjectsData } from 'api/categoriesProjectsAPI';
 import { API_URL } from 'utils/constants';
 
 export default function CategoriesProject() {
@@ -9,7 +9,6 @@ export default function CategoriesProject() {
     (async () => {
       const response = await getCategoriesProjectsData();
       setCategoriesProjects(response);
-      console.log('holaaa=>', response);
     })();
   }, []);
   return (

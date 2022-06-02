@@ -1,70 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BannerInterno from '@components/generalComponents/BannerInterno';
+import Card from '@components/generalComponents/Card';
+import { getComunicadosPrensaData, getComunicadosPrensaDataMaxSix } from 'api/centroDePrensaAPI';
+import { API_URL } from 'utils/constants';
 
 export default function ComunicadosPrensa() {
+  const [data, setData] = useState(null);
+  const loadAllComunicadosPrensa = () => {
+    (async () => {
+      const response = await getComunicadosPrensaData();
+      setData(response?.data);
+    })();
+  };
+  useEffect(() => {
+    (async () => {
+      const response = await getComunicadosPrensaDataMaxSix();
+      setData(response?.data);
+    })();
+  }, []);
   return (
     <>
       <BannerInterno
-        title="Comunicados de Prensa"
+        title="Comunicados de prensa"
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
         description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
       />
-      <div className="container grid grid-cols-1 lg:grid-cols-6 lg:gap-20 h-full mt-14 mb-0">
-        <div className="col-span-4">
-          <div className="bg-white mb-12 border-2 rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-            <img className="w-full !h-76 sm:!h-96" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
-            <div className="p-3 sm:p-9 pb-0">
-              <div className="flex justify-between">
-                <h3 className="text-left font-normal text-purpledark text-2xl">Proyecto mi generación es capaz</h3>
-
-                <button class="bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
-              </div>
-              <div className="bg-purpledark d-block w-10 h-0.5 mt-1 mb-4"></div>
-              <p className="text-sm font-bold text-gray text-justify text-xl w-100 text-description-eventnotice">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur ad Lorem ipsum dolor sit amet, consectetur ad Lorem ipsum dolor sit amet, consectetur
-                ad Lorem ipsum dolor sit amet, consectetur ad lor sit amet, consectetur ad lor sit amet, consectetur ad ad lor sit amet, consectetur ad ad lor sit amet, consectetur ad
-              </p>
-            </div>
-          </div>
-          <div className="bg-white mb-12 border-2 rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-            <img className="w-full !h-76 sm:!h-96" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
-            <div className="p-3 sm:p-9 pb-0">
-              <div className="flex justify-between">
-                <h3 className="text-left font-normal text-purpledark text-2xl">Proyecto mi generación es capaz</h3>
-
-                <button class="bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
-              </div>
-              <div className="bg-purpledark d-block w-10 h-0.5 mt-1 mb-4"></div>
-              <p className="text-sm font-bold text-gray text-justify text-xl w-100 text-description-eventnotice">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur ad Lorem ipsum dolor sit amet, consectetur ad Lorem ipsum dolor sit amet, consectetur
-                ad Lorem ipsum dolor sit amet, consectetur ad lor sit amet, consectetur ad lor sit amet, consectetur ad
-              </p>
-            </div>
-          </div>
+      <div className="container py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
+          {data?.map(
+            (item) =>
+              item.attributes.Nombre && (
+                <Card idNotice={item.id} title={item.attributes.Nombre}   typeCentroPrensa="comunicadosdeprensa" description={item.attributes.Descripcion} imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
+              )
+          )}
         </div>
-        <div className="col-span-2">
-          <div className="bg-white mb-8 rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-            <img className="w-full h-76" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
-            <div className="p-3 sm:p-7 pb-0">
-              <h3 className="text-center font-medium text-purpledark text-2xl">Proyecto mi generación es capaz</h3>
-              <div className="bg-purpledark d-block w-10 h-0.5 mx-auto my-3"></div>
-              <p className="text-sm font-bold text-[#606060] w-4/5 text-description-eventnotice m-auto text-center text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <div className="w-full text-center">
-                <button class="mt-6 mb-8 bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white mb-8 rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-            <img className="w-full h-76" src="https://www.unicef.org/sites/default/files/styles/hero_mobile/public/UN0336408-bluewashed.jpg?itok=eUdh_Mx-" />
-            <div className="p-3 sm:p-7 pb-0">
-              <h3 className="text-center font-medium text-purpledark text-2xl">Proyecto mi generación es capaz</h3>
-              <div className="bg-purpledark d-block w-10 h-0.5 mx-auto my-3"></div>
-              <p className="text-sm font-bold text-[#606060] w-4/5 text-description-eventnotice m-auto text-center text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <div className="w-full text-center">
-                <button class="mt-6 mb-8 bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
-              </div>
-            </div>
-          </div>
+        <div className="text-center">
+          <button onClick={loadAllComunicadosPrensa} className="mt-2 mb-1 bg-purpledark drop-shadow-lg h-9 px-8 rounded text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">
+            Ver más comunicados
+          </button>
         </div>
       </div>
     </>

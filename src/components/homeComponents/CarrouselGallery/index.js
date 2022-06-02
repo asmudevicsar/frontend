@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { EffectFade, Autoplay, Navigation } from 'swiper';
-import { getNoticesData } from 'api/noticesAPI';
+import { getEventsComunicadosGallery } from 'api/centroDePrensaAPI';
 import { API_URL } from 'utils/constants';
 
 export default function CarrouselGallery() {
@@ -17,9 +17,9 @@ export default function CarrouselGallery() {
 
   useEffect(() => {
     (async () => {
-      const response = await getNoticesData();
-      console.log('aaaa=>', response.data);
-      setData(response?.data);
+      const response = await getEventsComunicadosGallery();
+      console.log('aaaa=>', response);
+      setData(response);
     })();
   }, []);
   return (
@@ -38,7 +38,7 @@ export default function CarrouselGallery() {
         className="mySwiper"
       >
         {data?.map((item) =>
-          item?.attributes?.Galeria_de_imagenes?.data.map((image) => (
+          item?.attributes?.Galeria_de_imagenes?.data?.map((image) => (
             <SwiperSlide>
               <img className="w-full carrousel-gallery" src={`${API_URL}${image.attributes.url}`} />
             </SwiperSlide>

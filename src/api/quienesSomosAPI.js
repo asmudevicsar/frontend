@@ -11,3 +11,28 @@ export async function getQuienesSomosData() {
     return null;
   }
 }
+export async function getIdentidadCorporativa() {
+  try {
+    const url = `${API_URL}/api/identidad-corporativas?populate=*`;
+    const response = await fetch(url);
+    const result = await response.json();
+    return result.data[0];
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export async function getIdentidadOrganizativa() {
+  try {
+    const url = `${API_URL}/api/identidad-organizativas?populate=*`;
+    const response = await fetch(url);
+    const result = await response.json();
+    return result.data[0];
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+

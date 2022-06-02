@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function IdentidadCorporativaOrganizativa({ titleIdentidadOrganizativa, imageIdentidadOrganizativa, titleIdentidadCorporativa, imageIdentidadCorporativa }) {
   return (
@@ -11,7 +12,7 @@ export default function IdentidadCorporativaOrganizativa({ titleIdentidadOrganiz
       >
         <div className="ml-28 mt-40">
           <h2 className="text-5xl w-0 text-white font-extrabold">{titleIdentidadCorporativa}</h2>
-          <button class="mt-4 mb-8 bg-purpledark drop-shadow-lg h-12 px-6 rounded-3xl text-white text-base duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
+          <Link href="/quienes-somos/identidad-corporativa"><button class="mt-4 mb-8 bg-purpledark drop-shadow-lg h-12 px-6 rounded-3xl text-white text-base duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button></Link>
         </div>
       </div>
       <div
@@ -22,7 +23,7 @@ export default function IdentidadCorporativaOrganizativa({ titleIdentidadOrganiz
       >
         <div className="ml-28 mt-40">
           <h2 className="text-5xl w-0 text-white font-extrabold">{titleIdentidadOrganizativa}</h2>
-          <button class="mt-4 mb-8 bg-purpledark drop-shadow-lg h-12 px-6 rounded-3xl text-white text-base duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
+          <Link href="/quienes-somos/identidad-organizativa"><button class="mt-4 mb-8 bg-purpledark drop-shadow-lg h-12 px-6 rounded-3xl text-white text-base duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button></Link>
         </div>
       </div>
     </div>

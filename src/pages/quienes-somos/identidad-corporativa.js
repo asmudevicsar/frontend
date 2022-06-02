@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BannerInterno from '@components/generalComponents/BannerInterno';
+import { getIdentidadCorporativa } from 'api/quienesSomosAPI';
+import HTMLReactParser from 'html-react-parser';
+import Link from 'next/link';
 
 export default function IdentidadCorporativa() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getIdentidadCorporativa();
+      setData(response?.attributes);
+    })();
+  }, []);
   return (
     <>
       <BannerInterno
@@ -9,22 +20,37 @@ export default function IdentidadCorporativa() {
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
         description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
       />
-      <div className="container text-gray p-10">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac tempor odio. In vulputate placerat sapien et semper. Sed orci libero, rutrum non metus vel, varius pretium mi. Proin a sem id
-        dolor lobortis volutpat eget quis ex. Suspendisse dignissim quis diam sit amet ultricies. In eu ligula risus. Curabitur id lacinia massa. Praesent porttitor quis est non dignissim. Sed luctus
-        urna dolor, eu rutrum nibh dapibus et. Vestibulum aliquam eu arcu id blandit. Proin quis enim non tortor dignissim sodales in sed libero. Aenean in ligula lacus. Mauris rhoncus neque a ex
-        elementum, eu posuere orci posuere. Vestibulum id nibh facilisis, porta nunc nec, porta ligula. Integer maximus urna sit amet mauris lacinia aliquam. Praesent convallis sed justo sit amet
-        imperdiet. Quisque suscipit non odio sed sodales. Integer auctor pellentesque dolor eget suscipit. Suspendisse gravida nulla nec leo rutrum consectetur. Donec vitae massa lorem. Duis purus
-        odio, commodo at porttitor sit amet, maximus ac risus. Quisque quam libero, dignissim gravida pellentesque sit amet, vestibulum sed ipsum. Pellentesque habitant morbi tristique senectus et
-        netus et malesuada fames ac turpis egestas. Quisque vestibulum quam eget mauris laoreet pretium. Sed mattis, nisi non elementum euismod, magna est egestas est, vel fringilla augue risus at
-        nisl. Vestibulum ut consectetur dolor, gravida semper quam. Sed cursus dolor id dui dapibus, nec feugiat tellus porttitor. Nullam quis auctor augue. Sed lacus erat, varius quis dui a, mollis
-        tempus lorem. Nam facilisis iaculis quam a pretium. Integer ultricies ligula id ligula cursus, faucibus faucibus tellus vestibulum. Donec vel nulla id dolor tincidunt ultricies non a elit.
-        Maecenas et interdum ligula. Aliquam erat volutpat. Suspendisse at elit massa. Morbi cursus facilisis aliquam. Phasellus tincidunt tellus eu nunc finibus tincidunt. Suspendisse et sollicitudin
-        neque. Proin vestibulum elit non sem congue sodales. Vestibulum luctus quam metus, eu suscipit diam gravida in. Mauris malesuada mauris tempor turpis tristique, sed accumsan ante ornare. Sed
-        porta sem ac blandit lobortis. In aliquet tellus vel nisl dignissim, ac tempor odio lacinia. Morbi sit amet consequat ex, et eleifend ipsum. Morbi tincidunt quam massa, ut congue ligula
-        pellentesque a. Maecenas eget massa nec ex fermentum fermentum. Donec sed mi eleifend, porta sapien id, bibendum ipsum. Ut maximus, enim a luctus cursus, nisl mi auctor ante, eget ultricies
-        neque mi ut nulla. Proin pharetra ex vel libero placerat, non sodales lacus gravida.
+       <div className="container">
+       <nav class="flex mt-2 mb-6" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center text-purpledark text-sm duration-500 hover: duration-500 	">
+              <Link href="/">
+                Página principal
+              </Link>
+            </li>
+            <li className='text-purpledark text-sm duration-500 hover: duration-500 hover:text-purplelight'>
+              <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span href="#" class="text-purpledark">
+                    Quiénes Somos
+                </span>
+              </div>
+            </li>
+            <li aria-current="page" className='text-purpledark duration-500 hover: duration-500  text-sm hover:text-purplelight'>
+              <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400 cursor-pointer">Identidad Corporativa</span>
+            
+              </div>
+            </li>
+          </ol>
+        </nav>
       </div>
+      <div className="container text-gray pt-0 pb-16">{HTMLReactParser(data?.Descripcion ? data?.Descripcion : '')}</div>
     </>
   );
 }
