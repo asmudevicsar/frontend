@@ -1,35 +1,26 @@
-import React, { useState } from 'react';
-import 'react-image-gallery/styles/css/image-gallery.css';
+import React, { useState, useEffect } from 'react';
 import BannerInterno from '@components/generalComponents/BannerInterno';
-import GalleryImages from '@components/galleryImages';
-import 'react-responsive-modal/styles.css';
-import Modal from 'react-modal';
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-  },
-  content: {
-    color: 'lightsteelblue',
-  },
-};
+import Card from '@components/generalComponents/Card';
+import { getNoticesData, getEventsComunicadosGallery, getEventsComunicadosGalleryMaxSix } from 'api/centroDePrensaAPI';
+import { API_URL } from 'utils/constants';
+
 export default function Gallery() {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [data, setData] = useState(null);
+  const loadAllGalleries = () => {
+    (async () => {
+      let response = await getEventsComunicadosGallery();
 
-  function openModal() {
-    setIsOpen(true);
-  }
+      setData(response);
+    })();
+  };
+  useEffect(() => {
+    (async () => {
+      let response = await getEventsComunicadosGalleryMaxSix();
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+      console.log('aqui=>', response);
+      setData(response);
+    })();
+  }, []);
   return (
     <>
       <BannerInterno
@@ -37,44 +28,29 @@ export default function Gallery() {
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
         description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
       />
-      <img
-        className="w-full h-96 cursor-pointer darken-image duration-500 hover:duration-500"
-        onClick={openModal}
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-      />
-      <div className=" grid grid-cols-2 sm:grid-cols-4">
-        <div>
-          <img
-            className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500"
-            onClick={openModal}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-          />
+      <div className="container py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
+          {data?.map(
+            (item) =>
+              item?.attributes?.Nombre &&
+              item?.attributes?.Galeria_de_imagenes?.data?.length > 0 && (
+                <Card
+                  galleryType={item.attributes.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}
+                  isGallery={true}
+                  idGallery={item.id}
+                  idNotice={item.id}
+                  title={item.attributes.Nombre}
+                  imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
+                />
+              )
+          )}
         </div>
-        <div>
-          <img
-            className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500"
-            onClick={openModal}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-          />
-        </div>
-        <div>
-          <img
-            className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500"
-            onClick={openModal}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-          />
-        </div>
-        <div>
-          <img
-            className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500"
-            onClick={openModal}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-          />
+        <div className="text-center">
+          <button onClick={loadAllGalleries} className="mt-2 mb-1 bg-purpledark drop-shadow-lg h-9 px-8 rounded text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">
+            Ver más galerías
+          </button>
         </div>
       </div>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-        <GalleryImages />
-      </Modal>
     </>
   );
 }

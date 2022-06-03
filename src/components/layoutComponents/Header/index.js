@@ -3,7 +3,7 @@ import Link from 'next/link';
 import UlStyle from './UlStyle';
 import SocialLinks from '@components/generalComponents/SocialLinks/SocialLinks';
 import { FaWhatsapp } from 'react-icons/fa';
-export default function Header() {
+export default function Header({ numberCellphone, logoPrincipal }) {
   return (
     <>
       <nav className="w-full mx-auto border-b-2 border-b-purplelight z-50 fixed bg-[#fff]">
@@ -21,8 +21,8 @@ export default function Header() {
         <SocialLinks isResponsive={true} />
         <div className="container justify-between flex my-2 container-header">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start div-logo">
-            <Link href="" className=" text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-purpledark">
-              <img className="absolute logoresponsive top-1 w-24 h-20 sm:w-28 sm:h-20" src="http://localhost:3000/images/logo.png" alt="logoimage" />
+            <Link href="/" className=" text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-purpledark">
+              <img className="cursor-pointer absolute logoresponsive top-1 w-24 h-20 sm:w-32 sm:h-28" src={logoPrincipal} alt="logoimage" />
             </Link>
           </div>
           <div className={'lg:flex flex-grow items-center hidden'}>
@@ -33,7 +33,9 @@ export default function Header() {
         </div>
       </nav>
       <button className="btn-general-whatsapp bg-purpledark duration-500 fixed z-50 top-1/3 p-2 rounded-full right-1 sm:right-6 hover:bg-purplelight hover:duration-500">
-        <FaWhatsapp className="text-3xl text-white" />
+        <a target="_BLANK" href={`https://wa.me/57${numberCellphone}?text=Buenos%20dias`}>
+          <FaWhatsapp className="text-3xl text-white" />
+        </a>
       </button>
     </>
   );

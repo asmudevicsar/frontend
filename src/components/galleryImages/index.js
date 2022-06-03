@@ -1,22 +1,13 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
+import { API_URL } from 'utils/constants';
 
-export default function GallertImages() {
-  const images = [
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-  ];
-
+export default function GalleryImages({ imagesData }) {
+  const images = [];
+  imagesData?.map((item) => {
+    images.push({ original: `${API_URL}${item.attributes.url}`, thumbnail: `${API_URL}${item.attributes.url}` });
+  });
+  console.log('son imagenbes=>', images);
   return (
     <div>
       <ImageGallery items={images} />

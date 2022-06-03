@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getMessagesContactUs } from 'api/messagesContactUsAPI';
 
 export default function FormContact() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getMessagesContactUs();
+      setData(response?.attributes);
+    })();
+  }, []);
   return (
     <div class="container grid-container grid grid-cols-5 pt-2 pb-8">
       <div class="item1 col-span-5 sm:col-span-1 m-auto">
         <img className="" src="http://localhost:3000/images/logoblanco.png" alt="logoimage" />
       </div>
       <div class="item2 col-span-5 sm:col-span-4 mt-8">
-        <h3 className="text-center font-bold text-purpledark text-2xl w-3/4 m-auto">Contactanos para recibir información acerca de nuestros proyectos o ayuda en general</h3>
+        <h3 className="text-center font-bold text-purpledark text-2xl w-3/4 m-auto">{data?.Mensaje_Pagina_Principal}</h3>
         <div className="container mt-10">
           <form>
             <div className="columns-1 sm:columns-3">

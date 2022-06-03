@@ -20,17 +20,19 @@ export default function ComunicadosPrensa() {
   }, []);
   return (
     <>
-      <BannerInterno
-        title="Comunicados de prensa"
-        img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-        description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
-      />
+      <BannerInterno />
       <div className="container py-16">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {data?.map(
             (item) =>
               item.attributes.Nombre && (
-                <Card idNotice={item.id} title={item.attributes.Nombre}   typeCentroPrensa="comunicadosdeprensa" description={item.attributes.Descripcion} imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
+                <Card
+                  idNotice={item.id}
+                  title={item.attributes.Nombre}
+                  typeCentroPrensa="comunicadosdeprensa"
+                  description={item.attributes.Descripcion}
+                  imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
+                />
               )
           )}
         </div>

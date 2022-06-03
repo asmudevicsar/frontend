@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getMessagesContactUs } from 'api/messagesContactUsAPI';
+import { getGeneralInformation } from 'api/generalInformationAPI';
+import { API_URL } from 'utils/constants';
+import { getContactData } from 'api/contactAPI';
 
 export default function Contactenos() {
+  const [data, setData] = useState(null);
+  const [dataLogo, setDataLogo] = useState(null);
+  const [contactData, setContactData] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let responseLogo = await getGeneralInformation();
+      setDataLogo(responseLogo);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const response = await getMessagesContactUs();
+      setData(response?.attributes);
+    })();
+  }, []);
+  useEffect(() => {
+    (async () => {
+      const response = await getContactData();
+      setContactData(response);
+    })();
+  }, []);
   return (
     <div
-      style={{ backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU)' }}
+      style={{ backgroundImage: `url(${contactData && API_URL + contactData[0].attributes.Imagen_de_Fondo.data.attributes.url})` }}
       className={'contactenos relative mt-8 lg:mt-24 banner-interno active-anim image-banner h-52'}
     >
       <div className="content-image">
@@ -24,8 +51,8 @@ export default function Contactenos() {
           </div>
 
           <div className="bg-white px-8 py-4 col-span-1 mt-5 sm:mt-0">
-            <img className=" logoresponsive top-1 m-auto w-24 h-20 sm:w-28 sm:h-20" src="http://localhost:3000/images/logo.png" alt="logoimage" />
-            <p className="w-3/4 py-4 text-center !text-gray m-auto text-sm">Dejanos tus dudas, nos pondremos en contacto</p>
+            {dataLogo && <img className=" logoresponsive top-1 m-auto w-24 h-20 sm:w-32 sm:h-24" src={`${API_URL}${dataLogo[0]?.attributes?.Logo_Principal?.data?.attributes?.url}`} alt="logoimage" />}
+            <p className="w-3/4 py-4 text-center !text-gray m-auto text-sm">{data?.Mensaje_Pagina_Contactenos}</p>
             <form>
               <div className="columns-1">
                 <div>

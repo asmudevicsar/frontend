@@ -1,13 +1,13 @@
 import HTMLReactParser from 'html-react-parser';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React from 'react';
 
-export default function Card({ idNotice, title, description, imageUrl,typeCentroPrensa }) {
-  const {query} = useRouter();
-  console.log(query);
+export default function Card({idGallery, galleryType, isGallery, idNotice, title, description, imageUrl, typeCentroPrensa }) {
+  const urLink = isGallery
+    ? `/galeria/fotos/${galleryType == 'noticia' ? 'noticias' : 'comunicados'}/${idGallery}`
+    : `/centros-de-prensa/${typeCentroPrensa != 'comunicadosdeprensa' ? 'eventos-y-noticias' : 'comunicados-de-prensa'}/${idNotice}`;
   return (
-    <Link href={`/centros-de-prensa/${typeCentroPrensa!='comunicadosdeprensa'? "eventos-y-noticias" :"comunicados-de-prensa"}/${idNotice}`}>
+    <Link href={urLink}>
       <div className="bg-white card-container mb-8 rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
         <img className="w-full h-36" src={imageUrl} />
         <div className="p-3 pb-0">
