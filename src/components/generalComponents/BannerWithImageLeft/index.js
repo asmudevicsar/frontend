@@ -1,5 +1,6 @@
 import HTMLReactParser from 'html-react-parser';
 import React from 'react';
+import Image from 'next/image';
 
 export default function BannerWithImageLeft({ imageLeft, description='', backgroundImageData }) {
   return (
@@ -8,7 +9,7 @@ export default function BannerWithImageLeft({ imageLeft, description='', backgro
         <div className=" container grid grid-cols-5 gap-4 h-full">
           <div className="col-span-2 flex justify-center">
             <div className="center-data-description">
-              <img className="!h-32 !w-32 sm:!h-56 sm:!w-60 rounded-full" src={imageLeft} />
+              <Image width="280" height="280" className="!h-32 !w-32 rounded-full" src={imageLeft} />
             </div>
           </div>
           <div className="col-span-3">

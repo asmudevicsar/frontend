@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import Card from '@components/generalComponents/Card';
 import { getNoticesData, getNoticesDataMaxSix } from 'api/centroDePrensaAPI';
@@ -26,7 +27,9 @@ export default function EventosNoticias() {
           {data?.map(
             (item) =>
               item.attributes.Nombre && (
-                <Card idNotice={item.id} title={item.attributes.Nombre} description={item.attributes.Descripcion} imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
+                <div style={{ animation: "fadeIn 1s ease-in both" }}>
+                  <Card idNotice={item.id} title={item.attributes.Nombre} description={item.attributes.Descripcion} imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
+                </div>
               )
           )}
         </div>

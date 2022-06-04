@@ -26,13 +26,15 @@ export default function ComunicadosPrensa() {
           {data?.map(
             (item) =>
               item.attributes.Nombre && (
-                <Card
-                  idNotice={item.id}
-                  title={item.attributes.Nombre}
-                  typeCentroPrensa="comunicadosdeprensa"
-                  description={item.attributes.Descripcion}
-                  imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
-                />
+                <div style={{ animation: "fadeIn 1s ease-in both" }}>
+                  <Card
+                    idNotice={item.id}
+                    title={item.attributes.Nombre}
+                    typeCentroPrensa="comunicadosdeprensa"
+                    description={item.attributes.Descripcion}
+                    imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
+                  />
+                </div>
               )
           )}
         </div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import UlStyle from './UlStyle';
 import SocialLinks from '@components/generalComponents/SocialLinks/SocialLinks';
 import { FaWhatsapp } from 'react-icons/fa';
-export default function Header({ numberCellphone, logoPrincipal }) {
+export default function Header({ numberCellphone, logoPrincipal,logoResponsive }) {
   return (
     <>
       <nav className="w-full mx-auto border-b-2 border-b-purplelight z-50 fixed bg-[#fff]">
@@ -22,7 +22,7 @@ export default function Header({ numberCellphone, logoPrincipal }) {
         <div className="container justify-between flex my-2 container-header">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start div-logo">
             <Link href="/" className=" text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-purpledark">
-              <img className="cursor-pointer absolute logoresponsive top-1 w-24 h-20 sm:w-32 sm:h-28" src={logoPrincipal} alt="logoimage" />
+              <img className="cursor-pointer absolute logoresponsive top-1 w-24 h-20 sm:w-32 sm:h-28" src={logoResponsive} alt="logoimage" />
             </Link>
           </div>
           <div className={'lg:flex flex-grow items-center hidden'}>

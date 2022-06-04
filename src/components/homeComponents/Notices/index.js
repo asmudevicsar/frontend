@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+
 import { getNoticesMaxThree } from 'api/centroDePrensaAPI';
 import parse from 'html-react-parser';
 import Link from 'next/link';
@@ -23,7 +25,7 @@ export default function Notices() {
       <div className="container notices-home sm:gap-6 columns-1 grid grid-cols-1  lg:grid-cols-3 ">
         {data?.map((item) => (
           <div className="bg-white rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-            <img className="w-full h-48" src={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
+            <Image width="600" height="280" className="w-full h-48" src={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
             <div className="p-3 sm:p-7 pb-0">
               <h3 className="text-center font-medium text-purpledark text-2xl">{item.attributes.Nombre}</h3>
               <div className="bg-purpledark d-block w-10 h-0.5 mx-auto my-3"></div>

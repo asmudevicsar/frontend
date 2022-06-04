@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import Card from '@components/generalComponents/Card';
-import { getNoticesData, getEventsComunicadosGallery, getEventsComunicadosGalleryMaxSix } from 'api/centroDePrensaAPI';
+import { getEventsComunicadosGallery, getEventsComunicadosGalleryMaxSix } from 'api/centroDePrensaAPI';
 import { API_URL } from 'utils/constants';
+
 
 export default function Gallery() {
   const [data, setData] = useState(null);
@@ -17,7 +18,6 @@ export default function Gallery() {
     (async () => {
       let response = await getEventsComunicadosGalleryMaxSix();
 
-      console.log('aqui=>', response);
       setData(response);
     })();
   }, []);
@@ -34,14 +34,17 @@ export default function Gallery() {
             (item) =>
               item?.attributes?.Nombre &&
               item?.attributes?.Galeria_de_imagenes?.data?.length > 0 && (
-                <Card
-                  galleryType={item.attributes.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}
-                  isGallery={true}
-                  idGallery={item.id}
-                  idNotice={item.id}
-                  title={item.attributes.Nombre}
-                  imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
-                />
+                <div style={{ animation: "fadeIn 1s ease-in both" }}>
+                  
+                  <Card
+                    galleryType={item.attributes.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}
+                    isGallery={true}
+                    idGallery={item.id}
+                    idNotice={item.id}
+                    title={item.attributes.Nombre}
+                    imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
+                  />
+                </div>
               )
           )}
         </div>

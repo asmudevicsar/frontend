@@ -56,3 +56,6 @@
 .card-container span{
   color: #606060!important;
 }
+.animate__fadeInLeftBig{
+  animation: fadeIn 1s ease-out both!important;
+}

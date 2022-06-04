@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { getSocialLinks } from 'api/socialLinksAPI';
-
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube, FaSnapchatGhost, FaPinterestP, FaCaretDown } from 'react-icons/fa';
 import { API_URL } from 'utils/constants';
 
 export default function SocialLinks({ isResponsive }) {
