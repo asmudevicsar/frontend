@@ -14,7 +14,7 @@ export default function QuienesSomos() {
   }, []);
 
   return (
-    <div class="container grid-container grid grid-cols-1 lg:grid-cols-3 p-4 m-4 xl:m-12 quienesomos">
+    <div className="container grid-container grid grid-cols-1 lg:grid-cols-3 p-4 m-4 xl:m-12 quienesomos">
       <div>
         <h3 className="text-purplelight font-bold text-2xl lg:text-6xl">{data?.Titulo_QuienesSomos_Pagina_Principal}</h3>
         <p className="text-[#606060] text-lg lg:text-xl mt-4">{data?.Quienes_Somos}</p>
@@ -23,9 +23,9 @@ export default function QuienesSomos() {
         </div>
       </div>
       <div className="pt-8">
-        <img src={`${API_URL}${data?.Imagen_Pagina_Principal?.data?.attributes?.url}`} />
+        <img src={`${API_URL}${data?.Imagen_Pagina_Principal?.data?.attributes?.url}`} alt="image"/>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 xl:gap-0 lg:grid-cols-none grid-rows-none xl:grid-rows-2  mt-5 lg:mt-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 xl:gap-0 lg:grid-cols-none grid-rows-none xl:grid-rows-2  mt-5 lg:mt-0">
         <div className="w-full lg:w-3/4">
           <FaHandHoldingWater className="w-16 h-16 text-purpledark m-auto" />
           <h4 className="text-purpledark text-2xl lg:text-3xl font-black my-2 text-center">Misión</h4>

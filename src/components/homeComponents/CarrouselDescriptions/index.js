@@ -38,8 +38,8 @@ export default function CarrouselDescriptions() {
         modules={[EffectFade, Autoplay, Navigation, Pagination]}
         className="mySwiper"
       >
-        {data?.map((item) => (
-          <SwiperSlide>
+        {data?.map((item,index) => (
+          <SwiperSlide key={index}>
             <BannerWithImageLeft
               imageLeft={`${API_URL}${item.attributes.Imagen_Izquierda.data.attributes.url}`}
               description={item.attributes.Texto_Descripcion}

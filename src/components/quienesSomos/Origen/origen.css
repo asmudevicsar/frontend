@@ -17,7 +17,7 @@
 }
 .carrousel-descriptions .center-data-description {
   margin: 0;
-  position: absolute;
+  position: absolute!important;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -45,5 +45,10 @@
   .section-carrousel-descriptions .swiper-button-next {
     right: 0% !important;
     color: white !important;
+  }
+  .carrousel-descriptions .center-data-description {
+
+    position: relative!important;
+ 
   }
 }

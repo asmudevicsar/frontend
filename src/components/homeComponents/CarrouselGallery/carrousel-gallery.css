@@ -5,11 +5,66 @@
 .swiper-button-prev {
   color: white !important;
 }
+.projects.carrousel-gallery {
+  height: 320px;
+  width: 100%;
+  filter: brightness(70%);
+}
+.projects .swiper-fade .swiper-slide {
+  height: 300px;
+  width: 300px !important;
+}
+div.topSpacerDiv {
+  width: 0px;
+  height: 60px;
+  float: left;
+}
+
+.image-left-projects {
+  float: left;
+
+  height: auto;
+  width: 450px;
+}
+.project-descripcion span {
+  color: #606060 !important;
+  font-weight: 400;
+}
+.project-descripcion .swiper-button-prev {
+  border: 3px solid;
+  right: 120px;
+    left: auto;
+    bottom: 61px;
+    top: auto;
+    padding: 26px;
+}
+.project-descripcion .swiper-button-next {
+  border: 3px solid;
+  right: 49px;
+    left: auto;
+    bottom: 61px;
+    top: auto;
+    padding: 26px;
+}
+.project-descripcion {
+  color: #606060 !important;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 @media screen and (max-width: 640px) {
+  .partners .swiper {
+    height: 140px!important;
+  }
   .swiper {
     height: 300px;
   }
   .carrousel-gallery {
     height: 100%;
+  }
+  .image-left-projects{
+    width: 100%;
+  }
+  .projects.carrousel-gallery{
+    height: 257px;
   }
 }

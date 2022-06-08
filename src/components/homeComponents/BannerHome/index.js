@@ -23,9 +23,9 @@ export default function BannerHome() {
     return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
   });
   const nextSlide = () => {
-    if (slideIndex !== banners.length) {
+    if (slideIndex !== banners?.length) {
       setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === banners.length) {
+    } else if (slideIndex === banners?.length) {
       setSlideIndex(1);
     }
   };
@@ -41,10 +41,10 @@ export default function BannerHome() {
   return (
     <div className="container-slider mx-auto flex">
       <div className="box-buttons-banner z-40 absolute right-0">
-        <div className="bg-purpledark p-2 sm:p-3 cursor-pointer duration-500 hover:bg-purplelight" onClick={nextSlide}>
+        <div className="bg-purpledark p-1 sm:p-3 cursor-pointer duration-500 hover:bg-purplelight" onClick={nextSlide}>
           <IoIosArrowForward className="text-white w-6	h-6" id="arrowforward" />
         </div>
-        <div className="bg-white p-2 sm:p-3 cursor-pointer duration-500 hover:bg-[#E6E6E6]" onClick={prevSlide}>
+        <div className="bg-white p-1 sm:p-3 cursor-pointer duration-500 hover:bg-[#E6E6E6]" onClick={prevSlide}>
           <IoIosArrowBack className="text-purpledark w-6	h-6" />
         </div>
       </div>
@@ -57,8 +57,8 @@ export default function BannerHome() {
           >
             <div className="box-cell">
               <div className="center-data">
-                <h3 className="text-white text-3xl sm:text-5xl xl:text-6xl font-bold">{item.attributes.Titulo}</h3>
-                <p className="text-xl sm:text-3xl font-medium text-white mt-2">{item.attributes.Descripcion}</p>
+                <h3 className="text-white text-xl sm:text-5xl xl:text-6xl font-bold">{item.attributes.Titulo}</h3>
+                <p className="text-sm sm:text-3xl font-medium text-white mt-2">{item.attributes.Descripcion}</p>
               </div>
             </div>
           </div>

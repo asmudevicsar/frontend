@@ -6,6 +6,9 @@
 }
 .banner-interno.image-banner {
   filter: none !important;
+  background-position: center;
+  background-size: 100% 80%;
+
 }
 
 .banner-interno h3 {
@@ -23,4 +26,14 @@
   padding: 10px;
   transition: all 500ms ease-in-out;
   filter: none;
+}
+@media screen and (max-width: 640px) {
+  .banner-interno.image-banner {
+  
+    background-size: 100% 100%;
+  
+  }
+  .banner-interno{
+    height: 200px !important;
+  }
 }

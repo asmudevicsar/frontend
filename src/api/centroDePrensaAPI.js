@@ -123,7 +123,6 @@ export async function getComunicadoPrensaByUrl(idNotice) {
     const url = `${API_URL}/api/comunicados-de-prensas?filters[id][$eq]=${idNotice}&populate=*`;
     const response = await fetch(url);
     const result = await response.json();
-    console.log('hoaaa0>', result);
     return result;
   } catch (error) {
     console.log(error);

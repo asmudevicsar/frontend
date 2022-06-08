@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'react-image-gallery/styles/css/image-gallery.css';
+
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import GalleryImages from '@components/galleryImages';
 import 'react-responsive-modal/styles.css';
@@ -33,7 +34,6 @@ export default function GalleryComunicadosDetail() {
     (async () => {
       const response = await getComunicadoPrensaByUrl(query.fotos);
       setFotosData(response.data);
-      console.log('hayyy', response);
     })();
   }, []);
   function openModal() {
@@ -62,7 +62,7 @@ export default function GalleryComunicadosDetail() {
           {fotosData[0]?.attributes?.Galeria_de_imagenes?.data.map(
             (item, index) =>
               index != 0 && (
-                <div>
+                <div key={index}>
                   <img className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500" onClick={openModal} src={`${API_URL}${item.attributes.url}`} />
                 </div>
               )

@@ -20,6 +20,7 @@ header ul li:last-child {
 header ul li a {
   text-decoration: none;
   padding: 0 20px;
+  width: 300px;
 }
 header ul li ul {
   position: absolute;
@@ -27,7 +28,7 @@ header ul li ul {
   left: 21px;
   background: #fff;
   display: block;
-  width: 250px;
+  width: 300px;
   transition: 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -135,8 +136,8 @@ header nav {
     top: 0;
   }
   .logoresponsive {
-    width: 50px;
-    height: 57px;
+    width: 80px;
+    height: 63px;
     right: 0;
   }
   .navbar-responsive {

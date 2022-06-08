@@ -6,4 +6,13 @@
   .contactenos.banner-interno {
     height: 1000px !important;
   }
+  .ReactModal__Content{
+    width: auto;
+    padding: 0!important;
+  }
+  .ReactModal__Overlay:after{
+    top: 6%;
+    right: 10%;
+    font-size: 70px;
+  }
 }

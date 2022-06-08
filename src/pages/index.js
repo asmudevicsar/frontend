@@ -7,7 +7,7 @@ import QuienesSomos from '@components/homeComponents/QuienesSomos';
 import FormContact from '@components/homeComponents/FormContact';
 import CarrouselDescriptions from '@components/homeComponents/CarrouselDescriptions';
 import 'animate.css/animate.min.css';
-
+import Partners from '@components/homeComponents/Partners';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 export default function Home() {
   return (
@@ -26,6 +26,7 @@ export default function Home() {
       <AnimationOnScroll initiallyVisible={false} offset={0} animateIn="animate__fadeInLeftBig">
         <Notices />
       </AnimationOnScroll>
+      <Partners />
       <AnimationOnScroll initiallyVisible={false} offset={0} animateIn="animate__fadeInLeftBig">
         <CarrouselDescriptions />
       </AnimationOnScroll>

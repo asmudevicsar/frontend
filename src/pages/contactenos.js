@@ -124,49 +124,49 @@ export default function Contactenos() {
             <div className="flex mb-2">
               <p className="w-3/4 py-2 text-center !text-gray m-auto text-sm">{data?.Mensaje_Pagina_Contactenos}</p>
               {dataLogo && (
-                <img className=" logoresponsive top-1 m-auto w-24 h-20 sm:w-32 sm:h-24" src={`${API_URL}${dataLogo[0]?.attributes?.Logo_Principal?.data?.attributes?.url}`} alt="logoimage" />
+                <img alt="image" className=" logoresponsive top-1 m-auto w-24 h-20 sm:w-32 sm:h-24" src={`${API_URL}${dataLogo[0]?.attributes?.Logo_Principal?.data?.attributes?.url}`}/>
               )}
             </div>
             <form onSubmit={sendEmail}>
               <div className="columns-1">
                 <div>
                   <label>
-                    <span class="block text-sm font-bold text-gray font-bold">Nombre</span>
+                    <span className="block text-sm font-bold text-gray font-bold">Nombre</span>
                     <input
-                      maxlength="100"
+                      maxLength="100"
                       type="text"
                       required
                       value={name}
                       onChange={handleNameChange}
-                      class="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
+                      className="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
                       focus:outline-none focus:border-gray focus:ring-gray"
                     />
                   </label>
                 </div>
                 <div>
                   <label>
-                    <span class="block text-sm font-bold text-gray font-bold mt-2">Email</span>
+                    <span className="block text-sm font-bold text-gray font-bold mt-2">Email</span>
                     <input
-                      maxlength="100"
+                      maxLength="100"
                       type="email"
                       value={email}
                       required
                       onChange={handleEmailChange}
-                      class="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
+                      className="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
                       focus:outline-none focus:border-gray focus:ring-gray"
                     />
                   </label>
                 </div>
                 <div>
                   <label>
-                    <span class="block text-sm font-bold text-gray font-bold  mt-2">Celular</span>
+                    <span className="block text-sm font-bold text-gray font-bold  mt-2">Celular</span>
                     <input
-                      maxlength="100"
+                      maxLength="100"
                       type="number"
                       value={numberCellphone}
                       required
                       onChange={handleNumberCellphoneChange}
-                      class="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
+                      className="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
                       focus:outline-none focus:border-gray focus:ring-gray"
                     />
                   </label>
@@ -174,14 +174,14 @@ export default function Contactenos() {
               </div>
               <div className="mt-1">
                 <label>
-                  <span class="block text-sm font-bold text-gray font-bold  mt-2">Mensaje</span>
+                  <span className="block text-sm font-bold text-gray font-bold  mt-2">Mensaje</span>
 
                   <textarea
-                    maxlength="500"
+                    maxLength="500"
                     value={message}
                     required
                     onChange={handleMessageChange}
-                    class="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
+                    className="mt-1 block w-full px-3 py-2 bg-[#F6F6F6] border border-[#E8E8E8] rounded text-sm text-gray placeholder-gray
                       focus:outline-none focus:border-gray focus:ring-gray"
                   ></textarea>
                 </label>

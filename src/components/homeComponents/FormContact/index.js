@@ -66,53 +66,53 @@ export default function FormContact() {
     })();
   }, []);
   return (
-    <div class="container grid-container grid grid-cols-5 pt-2 pb-8">
-      <div class="item1 col-span-5 sm:col-span-1 m-auto">
-        <img className="" src="http://localhost:3000/images/logoblanco.png" alt="logoimage" />
+    <div className="container grid-container grid grid-cols-5 pt-2 pb-8">
+      <div className="item1 col-span-5 sm:col-span-1 m-auto ">
+        <img className="logoblanco" src="/images/logoblanco.png" alt="logoimage" />
       </div>
-      <div class="item2 col-span-5 sm:col-span-4 mt-8">
-        <h3 className="text-center font-bold text-purpledark text-2xl w-3/4 m-auto">{data?.Mensaje_Pagina_Principal}</h3>
-        <div className="container mt-10 px-4 xl:px-0">
+      <div className="item2 col-span-5 sm:col-span-4 mt-8">
+        <h3 className="text-center font-bold text-purpledark text-xl sm:text-2xl w-3/4 m-auto">{data?.Mensaje_Pagina_Principal}</h3>
+        <div className="container mt-4 sm:mt-10 px-4 xl:px-0">
           <form onSubmit={sendEmail}>
             <div className="columns-1 sm:columns-3">
               <div>
                 <label>
-                  <span class="block text-sm font-bold text-purpledark font-bold">Nombre</span>
+                  <span className="block text-sm font-bold text-purpledark font-bold">Nombre</span>
                   <input
                     type="text"
-                    maxlength="100"
+                    maxLength="100"
                     value={name}
                     onChange={handleNameChange}
                     required
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
+                    className="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
                       focus:outline-none focus:border-purpledark focus:ring-purpledark"
                   />
                 </label>
               </div>
               <div>
                 <label>
-                  <span class="block text-sm font-bold text-purpledark font-bold">Email</span>
+                  <span className="block text-sm font-bold text-purpledark font-bold">Email</span>
                   <input
                     type="email"
-                    maxlength="100"
+                    maxLength="100"
                     value={email}
                     onChange={handleEmailChange}
                     required
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
+                    className="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
                       focus:outline-none focus:border-purpledark focus:ring-purpledark"
                   />
                 </label>
               </div>
               <div>
                 <label>
-                  <span class="block text-sm font-bold text-purpledark font-bold">Celular</span>
+                  <span className="block text-sm font-bold text-purpledark font-bold">Celular</span>
                   <input
                     type="number"
-                    maxlength="100"
+                    maxLength="100"
                     value={numberCellphone}
                     required
                     onChange={handleNumberCellphoneChange}
-                    class="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
+                    className="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
                       focus:outline-none focus:border-purpledark focus:ring-purpledark"
                   />
                 </label>
@@ -120,13 +120,13 @@ export default function FormContact() {
             </div>
             <div className="mt-3">
               <label>
-                <span class="block text-sm font-medium text-purpledark font-bold">Mensaje</span>
+                <span className="block text-sm font-medium text-purpledark font-bold">Mensaje</span>
                 <textarea
-                  maxlength="500"
+                  maxLength="500"
                   required
                   value={message}
                   onChange={handleMessageChange}
-                  class="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-purpledark rounded text-sm text-purpledark placeholder-purpledark
                       focus:outline-none focus:border-purpledark focus:ring-purpledark"
                 ></textarea>
               </label>

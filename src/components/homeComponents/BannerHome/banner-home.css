@@ -25,8 +25,11 @@
   }
 }
 @media screen and (max-width: 640px) {
+  .box-buttons-banner{
+    top: 73%;
+  }
   .container-slider {
-    height: 380px;
+    height: 300px;
   }
   .container-slider .center-data {
     width: 65% !important;

@@ -26,7 +26,7 @@ export default function Card({ idGallery, galleryType, isGallery, idNotice, titl
             <div className="bg-purpledark d-block w-10 h-0.5 mx-auto my-3"></div>
             <p className="text-base font-normal text-[#606060] w-4/5 text-description-eventnotice m-auto text-center text-lg">{HTMLReactParser(description ? description : '')}</p>
             <div className="w-full text-center">
-              <button class="mt-5 mb-7 bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
+              <button className="mt-5 mb-7 bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
             </div>
           </div>
         </div>

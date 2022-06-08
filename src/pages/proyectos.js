@@ -1,4 +1,6 @@
 import React from 'react';
+import 'animate.css/animate.min.css';
+
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import ProjectCategories from '@components/proyectComponents/ProjectsCategories';
 

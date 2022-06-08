@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import 'animate.css/animate.min.css';
+
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import Card from '@components/generalComponents/Card';
 import { getEventsComunicadosGallery, getEventsComunicadosGalleryMaxSix } from 'api/centroDePrensaAPI';
@@ -28,13 +30,13 @@ export default function Gallery() {
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
         description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
       />
-      <div className="container py-16">
+      <div className="container py-8 sm:py-16 px-8 sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {data?.map(
-            (item) =>
+            (item,index) =>
               item?.attributes?.Nombre &&
               item?.attributes?.Galeria_de_imagenes?.data?.length > 0 && (
-                <div style={{ animation: "fadeIn 1s ease-in both" }}>
+                <div key={index} style={{ animation: "fadeIn 1s ease-in both" }}>
                   
                   <Card
                     galleryType={item.attributes.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}

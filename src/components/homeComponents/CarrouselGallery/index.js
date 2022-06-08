@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,7 +18,6 @@ export default function CarrouselGallery() {
   useEffect(() => {
     (async () => {
       const response = await getEventsComunicadosGallery();
-      console.log('aaaa=>', response);
       setData(response);
     })();
   }, []);
@@ -38,10 +36,10 @@ export default function CarrouselGallery() {
         modules={[EffectFade, Autoplay, Navigation]}
         className="mySwiper"
       >
-        {data?.map((item) =>
-          item?.attributes?.Galeria_de_imagenes?.data?.map((image) => (
-            <SwiperSlide>
-              <img className="w-full carrousel-gallery" src={`${API_URL}${image.attributes.url}`} />
+        {data?.map((item,index) =>
+          item?.attributes?.Galeria_de_imagenes?.data?.map((image,indexGallery) => (
+            <SwiperSlide key={index+indexGallery}>
+              <img className="w-full carrousel-gallery" src={`${API_URL}${image.attributes.url}`}  alt={`${API_URL}${image.attributes.url}`} />
             </SwiperSlide>
           ))
         )}

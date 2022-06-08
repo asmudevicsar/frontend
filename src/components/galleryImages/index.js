@@ -7,7 +7,6 @@ export default function GalleryImages({ imagesData }) {
   imagesData?.map((item) => {
     images.push({ original: `${API_URL}${item.attributes.url}`, thumbnail: `${API_URL}${item.attributes.url}` });
   });
-  console.log('son imagenbes=>', images);
   return (
     <div>
       <ImageGallery items={images} />

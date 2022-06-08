@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import 'animate.css/animate.min.css';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import Origen from '@components/quienesSomos/Origen';
 import NuestraHistoria from '@components/quienesSomos/NuestraHistoria';
@@ -8,6 +7,7 @@ import MisionVision from '@components/quienesSomos/MisionVision';
 import IdentidadCorporativaOrganizativa from '@components/quienesSomos/IdentidadCorporativaOrganizativa';
 import { getQuienesSomosData } from 'api/quienesSomosAPI';
 import { API_URL } from 'utils/constants';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 export default function QuienesSomos() {
   const [data, setData] = useState(null);
