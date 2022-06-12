@@ -8,6 +8,7 @@ import Modal from 'react-modal';
 import { getNoticeByUrl } from 'api/centroDePrensaAPI';
 import { useRouter } from 'next/router';
 import { API_URL } from 'utils/constants';
+import Seo from '@components/seo';
 
 const customStyles = {
   content: {
@@ -33,7 +34,7 @@ export default function GalleryNoticiasDetail() {
   useEffect(() => {
     (async () => {
       const response = await getNoticeByUrl(query.fotos);
-      setFotosData(response.data);
+      setFotosData(response?.data);
     })();
   }, []);
   function openModal() {
@@ -45,6 +46,7 @@ export default function GalleryNoticiasDetail() {
   }
   return (
     <>
+    <Seo title={`Galeria ${fotosData?.length && fotosData[0]?.attributes?.Nombre}`} description={`Galeria ${fotosData?.length && fotosData[0]?.attributes?.Nombre}`}/>
       <BannerInterno
         title={`Galeria ${fotosData?.length && fotosData[0]?.attributes?.Nombre}`}
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"

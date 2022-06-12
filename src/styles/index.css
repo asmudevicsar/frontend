@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-@import url("../components/layoutComponents/Header/header.css");
-@import url("../components/layoutComponents//Footer/footer.css");
-@import url("../components/generalComponents/BannerWithImageLeft/banner-with-image.css");
-@import url("../components/generalComponents/BannerInterno/banner-interno.css");
-@import url("./proyectos.css");
-@import url("./centro-prensa.css");
-@import url("../components/galleryImages/gallery-images.css");
-@import url("./quienessomos.css");
-@import url("./contactenos.css");
-@import url("../components/homeComponents/Notices/notices-home.css");
+@import url('../components/layoutComponents/Header/header.css');
+@import url('../components/layoutComponents//Footer/footer.css');
+@import url('../components/generalComponents/BannerWithImageLeft/banner-with-image.css');
+@import url('../components/generalComponents/BannerInterno/banner-interno.css');
+@import url('./proyectos.css');
+@import url('./centro-prensa.css');
+@import url('../components/galleryImages/gallery-images.css');
+@import url('./quienessomos.css');
+@import url('./contactenos.css');
+@import url('../components/homeComponents/Notices/notices-home.css');
 * {
-  font-family: 'Comfortaa', cursive!important;
+  font-family: 'Comfortaa', cursive !important;
 }
 .container {
   width: 100%;
@@ -18,18 +18,25 @@
   margin-right: auto;
   margin-left: auto;
 }
-.content-project{
+.content-project {
   min-height: 300px;
 }
-.logoblanco{
-  height: 200px;
+.logoblanco {
+  height: 400px;
 }
-.social-links-responsive{
+.social-links-responsive {
   display: block;
 }
+@media (max-width: 640px) {
+  .breadcrumb {
+    display: none;
+  }
+}
 @media (max-width: 1024px) {
-  
-  .social-links-responsive{
+  .logoblanco {
+    height: 200px;
+  }
+  .social-links-responsive {
     display: none;
   }
 }
@@ -48,7 +55,6 @@
   .container {
     max-width: 960px;
   }
-  
 }
 @media (min-width: 1200px) {
   .container {
@@ -60,9 +66,9 @@
     max-width: 1350px;
   }
 }
-.card-container span{
-  color: #606060!important;
+.card-container span {
+  color: #606060 !important;
 }
-.animate__fadeInLeftBig{
-  animation: fadeIn 1s ease-out both!important;
+.animate__fadeInLeftBig {
+  animation: fadeIn 1s ease-out both !important;
 }

@@ -23,31 +23,35 @@ export default function CarrouselDescriptions() {
     })();
   }, []);
   return (
-    <div className="section-carrousel-descriptions">
-      <Swiper
-        slidesPerView={1}
-        pagination={true}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
-        effect={'fade'}
-        spaceBetween={1}
-        loop={true}
-        navigation={true}
-        modules={[EffectFade, Autoplay, Navigation, Pagination]}
-        className="mySwiper"
-      >
-        {data?.map((item,index) => (
-          <SwiperSlide key={index}>
-            <BannerWithImageLeft
-              imageLeft={`${API_URL}${item.attributes.Imagen_Izquierda.data.attributes.url}`}
-              description={item.attributes.Texto_Descripcion}
-              backgroundImageData={`${API_URL}${item.attributes.Imagen_de_fondo.data.attributes.url}`}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <>
+      {data && data?.length > 0 && (
+        <div className="section-carrousel-descriptions">
+          <Swiper
+            slidesPerView={1}
+            pagination={true}
+            autoplay={{
+              delay: 6000,
+              disableOnInteraction: false,
+            }}
+            effect={'fade'}
+            spaceBetween={1}
+            loop={true}
+            navigation={true}
+            modules={[EffectFade, Autoplay, Navigation, Pagination]}
+            className="mySwiper"
+          >
+            {data?.map((item, index) => (
+              <SwiperSlide key={index}>
+                <BannerWithImageLeft
+                  imageLeft={`${API_URL}${item.attributes.Imagen_Izquierda.data.attributes.url}`}
+                  description={item.attributes.Texto_Descripcion}
+                  backgroundImageData={`${API_URL}${item.attributes.Imagen_de_fondo.data.attributes.url}`}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
+    </>
   );
 }

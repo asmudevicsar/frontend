@@ -23,27 +23,29 @@ export default function CarrouselGallery() {
   }, []);
   return (
     <>
-      <Swiper
-        slidesPerView={1}
-        autoplay={{
-          delay: 6000,
-          disableOnInteraction: false,
-        }}
-        effect={'fade'}
-        spaceBetween={1}
-        loop={true}
-        navigation={true}
-        modules={[EffectFade, Autoplay, Navigation]}
-        className="mySwiper"
-      >
-        {data?.map((item,index) =>
-          item?.attributes?.Galeria_de_imagenes?.data?.map((image,indexGallery) => (
-            <SwiperSlide key={index+indexGallery}>
-              <img className="w-full carrousel-gallery" src={`${API_URL}${image.attributes.url}`}  alt={`${API_URL}${image.attributes.url}`} />
-            </SwiperSlide>
-          ))
-        )}
-      </Swiper>
+      {data && data?.length > 0 && (
+        <Swiper
+          slidesPerView={1}
+          autoplay={{
+            delay: 6000,
+            disableOnInteraction: false,
+          }}
+          effect={'fade'}
+          spaceBetween={1}
+          loop={true}
+          navigation={true}
+          modules={[EffectFade, Autoplay, Navigation]}
+          className="mySwiper"
+        >
+          {data?.map((item, index) =>
+            item?.attributes?.Galeria_de_imagenes?.data?.map((image, indexGallery) => (
+              <SwiperSlide key={index + indexGallery}>
+                <img className="w-full carrousel-gallery" src={`${API_URL}${image.attributes.url}`} alt={`${API_URL}${image.attributes.url}`} />
+              </SwiperSlide>
+            ))
+          )}
+        </Swiper>
+      )}
     </>
   );
 }

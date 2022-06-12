@@ -8,6 +8,7 @@ import { getComunicadoPrensaByUrl, getComunicadosPrensaData } from 'api/centroDe
 import HTMLReactParser from 'html-react-parser';
 import { API_URL } from 'utils/constants';
 import Link from 'next/link';
+import Seo from '@components/seo';
 
 export default function ComunicadosPrensaDetalle() {
   const { query } = useRouter();
@@ -44,9 +45,10 @@ export default function ComunicadosPrensaDetalle() {
 
   return (
     <>
+      <Seo title={eventoComunicadoPrensa?.attributes?.Nombre} description={eventoComunicadoPrensa?.attributes?.Nombre} />
       <BannerInterno />
       <div className="container">
-        <nav className="flex mt-2 mb-6" aria-label="Breadcrumb">
+        <nav className="flex mt-2 mb-6 breadcrumb" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center text-purpledark text-sm duration-500 hover: duration-500 	">
               <Link href="/">Página principal</Link>

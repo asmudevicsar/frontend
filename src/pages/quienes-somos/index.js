@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import 'animate.css/animate.min.css';
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import Origen from '@components/quienesSomos/Origen';
 import NuestraHistoria from '@components/quienesSomos/NuestraHistoria';
@@ -8,6 +7,7 @@ import IdentidadCorporativaOrganizativa from '@components/quienesSomos/Identidad
 import { getQuienesSomosData } from 'api/quienesSomosAPI';
 import { API_URL } from 'utils/constants';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import Seo from '@components/seo';
 
 export default function QuienesSomos() {
   const [data, setData] = useState(null);
@@ -21,11 +21,8 @@ export default function QuienesSomos() {
 
   return (
     <div>
-      <BannerInterno
-        title="Quienes Sómos"
-        img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-        description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
-      />
+      <Seo title="Quíenes somos" description="Quíenes somos" />
+      <BannerInterno />
       <AnimationOnScroll initiallyVisible={true} offset={0} animateIn="animate__fadeInLeftBig">
         <Origen description={data?.Origen} title={data?.Titulo_Origen_Pagina_Quienes_Somos} image={`${API_URL}${data?.Imagen_Origen.data.attributes.url}`} />
       </AnimationOnScroll>

@@ -1,8 +1,17 @@
-import React from 'react'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
-export default function Seo() {
+export default function Seo(props) {
+  const { title, description } = props;
   return (
-    <div>index</div>
-  )
+    <Head>
+      <title>{title}</title>
+      <meta property={description} content={description} />
+    </Head>
+  );
+}
+
+Seo.defaultProps={
+  title:"ASMUDEVICSAR",
+  description:"Asociación de Mujeres Desplazadas y Victimas de Conflicto Armado, ubicado en Santa Rosa del Sur, Bolívar."
 }

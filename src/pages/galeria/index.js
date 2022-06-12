@@ -5,7 +5,7 @@ import BannerInterno from '@components/generalComponents/BannerInterno';
 import Card from '@components/generalComponents/Card';
 import { getEventsComunicadosGallery, getEventsComunicadosGalleryMaxSix } from 'api/centroDePrensaAPI';
 import { API_URL } from 'utils/constants';
-
+import Seo from '@components/seo';
 
 export default function Gallery() {
   const [data, setData] = useState(null);
@@ -25,6 +25,7 @@ export default function Gallery() {
   }, []);
   return (
     <>
+      <Seo title="Galería de imágenes" description="Galería de imágenes" />
       <BannerInterno
         title="Galeria"
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
@@ -33,11 +34,10 @@ export default function Gallery() {
       <div className="container py-8 sm:py-16 px-8 sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {data?.map(
-            (item,index) =>
+            (item, index) =>
               item?.attributes?.Nombre &&
               item?.attributes?.Galeria_de_imagenes?.data?.length > 0 && (
-                <div key={index} style={{ animation: "fadeIn 1s ease-in both" }}>
-                  
+                <div key={index} style={{ animation: 'fadeIn 1s ease-in both' }}>
                   <Card
                     galleryType={item.attributes.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}
                     isGallery={true}

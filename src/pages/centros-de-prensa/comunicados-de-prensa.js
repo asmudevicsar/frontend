@@ -3,6 +3,7 @@ import BannerInterno from '@components/generalComponents/BannerInterno';
 import Card from '@components/generalComponents/Card';
 import { getComunicadosPrensaData, getComunicadosPrensaDataMaxSix } from 'api/centroDePrensaAPI';
 import { API_URL } from 'utils/constants';
+import Seo from '@components/seo';
 
 export default function ComunicadosPrensa() {
   const [data, setData] = useState(null);
@@ -20,13 +21,14 @@ export default function ComunicadosPrensa() {
   }, []);
   return (
     <>
+      <Seo title="Comunidados de Prensa" description="Comunicados de Prensa" />
       <BannerInterno />
       <div className="container py-8 sm:py-16 px-8 sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {data?.map(
-            (item,index) =>
+            (item, index) =>
               item.attributes.Nombre && (
-                <div key={index} style={{ animation: "fadeIn 1s ease-in both" }}>
+                <div key={index} style={{ animation: 'fadeIn 1s ease-in both' }}>
                   <Card
                     idNotice={item.id}
                     title={item.attributes.Nombre}

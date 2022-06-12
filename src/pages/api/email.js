@@ -7,13 +7,15 @@ export default async (req, res) => {
     port: 587,
     secure: false,
     auth: {
-      user: 'sergiocastillo7398@gmail.com',
-      pass: 'uvkshjtlrwfggoox',
+      user: 'asmudevicsar@gmail.com',
+      pass: 'pnjrgutlawswloaw',
+      //pass: 'uvkshjtlrwfggoox',
+      
     },
   });
   const data = {
     from: email,
-    to: 'sergiocastillo7398@gmail.com',
+    to: 'asmudevicsar@gmail.com',
     subject: 'Notificación Sitio Web ASMUDEVICSAR',
     html: `<h2>${typeMessage ? typeMessage : 'Mensaje para ASMUDEVICSAR'}</h2>
         <p>Desde el sitio web enviaron el siguiente mensaje:</p>

@@ -3,6 +3,7 @@ import BannerInterno from '@components/generalComponents/BannerInterno';
 import { getIdentidadCorporativa } from 'api/quienesSomosAPI';
 import HTMLReactParser from 'html-react-parser';
 import Link from 'next/link';
+import Seo from '@components/seo';
 
 export default function IdentidadCorporativa() {
   const [data, setData] = useState(null);
@@ -15,13 +16,14 @@ export default function IdentidadCorporativa() {
   }, []);
   return (
     <>
+    <Seo title="Identidad Corporativa" description="Identidad Corporativa"/>
       <BannerInterno
         title="Identidad Corporativa"
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
         description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
       />
        <div className="container">
-       <nav className="flex mt-2 mb-6" aria-label="Breadcrumb">
+       <nav className="flex mt-2 mb-6 breadcrumb" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center text-purpledark text-sm duration-500 hover: duration-500 	">
               <Link href="/">

@@ -10,6 +10,7 @@ import { API_URL } from 'utils/constants';
 import {  getProjectsMaxSixByCategory } from 'api/projectsAPI';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import HTMLReactParser from 'html-react-parser';
+import Seo from '@components/seo';
 
 export default function Projects() {
   const query = useRouter();
@@ -28,6 +29,7 @@ export default function Projects() {
   }, [query]);
   return (
     <>
+    <Seo title="Categorías de proyectos" description="Categorías de proyectos" />
       <BannerInterno />
       <div className="container py-8 sm:py-16 px-8 sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">

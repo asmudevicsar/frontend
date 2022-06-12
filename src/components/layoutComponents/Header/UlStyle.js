@@ -109,11 +109,11 @@ export default function UlStyle({ hasClassMenuItemsResponsive, onButtonClick }) 
           </ul>
         </li>
         <li className="nav-item">
-          <div className="px-2 py-2 flex items-center text-base  font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
+        <div className="px-2 py-2 flex items-center text-base font-bold leading-snug text-purpledark duration-500 hover:text-purplelight hover:duration-500">
             <i className="fab fa-pinterest text-lg leading-lg text-purpledark opacity-75"></i>
             {hasClassMenuItemsResponsive && <FaBullhorn />}
 
-            <span className={`ml-2 title-responsive  ${query.pathname.includes('centros-de-prensa') && ' active '} cursor-pointer`}>Centro de prensa</span>
+            <span className={`ml-2 title-responsive text-[#444] ${query.pathname.includes('centros-de-prensa') && ' active '} cursor-pointer`}>Centro de prensa</span>
 
             <FaCaretDown className="ml-1" />
           </div>

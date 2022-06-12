@@ -4,6 +4,7 @@ import BannerInterno from '@components/generalComponents/BannerInterno';
 import Card from '@components/generalComponents/Card';
 import { getNoticesData, getNoticesDataMaxSix } from 'api/centroDePrensaAPI';
 import { API_URL } from 'utils/constants';
+import Seo from '@components/seo';
 
 export default function EventosNoticias() {
   const [data, setData] = useState(null);
@@ -21,6 +22,7 @@ export default function EventosNoticias() {
   }, []);
   return (
     <>
+    <Seo title="Eventos y Noticias" description="Eventos y Noticias" />
       <BannerInterno />
       <div className="container py-8 sm:py-16 px-8 sm:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
