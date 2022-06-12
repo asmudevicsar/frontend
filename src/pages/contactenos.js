@@ -7,6 +7,7 @@ import { getGeneralInformation } from 'api/generalInformationAPI';
 import { API_URL } from 'utils/constants';
 import { getContactData } from 'api/contactAPI';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+import Seo from '@components/seo';
 
 export default function Contactenos() {
   const captcha = useRef(null);
