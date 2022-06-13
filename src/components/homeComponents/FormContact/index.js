@@ -4,9 +4,11 @@ import 'react-notifications/lib/notifications.css';
 import { getMessagesContactUs } from 'api/messagesContactUsAPI';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { getGeneralInformation } from 'api/generalInformationAPI';
-const [dataLogoWhite, setDataLogoWhite] = useState(null);
+import { API_URL } from 'utils/constants';
 
 export default function FormContact() {
+  const [dataLogoWhite, setDataLogoWhite] = useState(null);
+
   const captcha = useRef(null);
   const [captchaValid, setCaptchaValid] = useState(null);
 
