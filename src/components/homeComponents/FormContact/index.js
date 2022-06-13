@@ -3,6 +3,8 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import 'react-notifications/lib/notifications.css';
 import { getMessagesContactUs } from 'api/messagesContactUsAPI';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { getGeneralInformation } from 'api/generalInformationAPI';
+const [dataLogoWhite, setDataLogoWhite] = useState(null);
 
 export default function FormContact() {
   const captcha = useRef(null);
@@ -50,25 +52,22 @@ export default function FormContact() {
         setNumberCellphone('');
         setMessage('');
       }, 1000);
-      /* const res = await fetch('/api/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: name, email: email, message: message, numberCellphone: numberCellphone }),
-      }); */
+  
     }
   };
   useEffect(() => {
     (async () => {
       const response = await getMessagesContactUs();
       setData(response?.attributes);
+
+      let responseLogoWhite = await getGeneralInformation();
+      setDataLogoWhite(responseLogoWhite);
     })();
   }, []);
   return (
     <div className="container grid-container grid grid-cols-5 pt-2 pb-8">
       <div className="item1 col-span-5 sm:col-span-1 m-auto ">
-        <img className="logoblanco" src="/images/logoblanco.png" alt="logoimage" />
+        <img className="logoblanco" src={dataLogoWhite && dataLogoWhite[0] && `${API_URL}${dataLogoWhite[0]?.attributes?.Logo_Blanco?.data?.attributes?.url}`} alt="logoimage" />
       </div>
       <div className="item2 col-span-5 sm:col-span-4 mt-8">
         <h3 className="text-center font-bold text-purpledark text-xl sm:text-2xl w-3/4 m-auto">{data?.Mensaje_Pagina_Principal}</h3>
