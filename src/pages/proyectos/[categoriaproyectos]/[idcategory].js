@@ -25,6 +25,7 @@ export default function Projects() {
     (async () => {
       const response = await getProjectsMaxSixByCategory(query.query.idcategory);
       setData(response?.data);
+      console.log(response?.data);
     })();
   }, [query]);
   return (
@@ -39,9 +40,11 @@ export default function Projects() {
                 item?.attributes?.Titulo && (
                   <div key={index} style={{ animation: 'fadeIn 1s ease-in both' }}>
                     <AnimationOnScroll initiallyVisible={true} animateIn="animate__fadeInLeftBig">
-                      <Link href={`/proyectos/${query.query.categoriaproyectos}/detalle/${item.id}`}>
+                      <Link href={`/proyectos/${query.query.categoriaproyectos}/detalle/${item?.id}`}>
                         <div className="bg-white card-container mb-8 rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-                          <Image width="500" height="300" className="w-full !h-20 sm:h-36" src={`${API_URL}${item?.attributes?.Imagenes?.data[0]?.attributes?.url}`} />
+                          {item.length>0 && item?.attributes?.Imagenes?.data[0].attributes?.url && (
+                            <Image width="500" height="300" className="w-full !h-20 sm:h-36" src={`${API_URL}${item?.attributes?.Imagenes?.data[0].attributes?.url}`} />
+                          )}
                           <div className="p-3 pb-0">
                             <h3 className="text-center font-medium text-purpledark text-xl">{item?.attributes?.Titulo}</h3>
                             <div className="bg-purpledark d-block w-10 h-0.5 mx-auto my-3"></div>
