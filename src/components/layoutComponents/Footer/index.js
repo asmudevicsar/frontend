@@ -29,8 +29,8 @@ export default function Footer({ logoBlanco, galleryData }) {
 
             <div className="pt-3">
               {categoriesProjects?.map((item, index) => (
-                <Link href={`${item.attributes.Enlace}`} key={index}>
-                  <p className="text-white cursor-pointer text-sm duration-500 hover:duration-500 hover:text-purplelight py-1">{item.attributes.Nombre_de_Categoria}</p>
+                <Link href={`${item?.attributes?.Enlace}`} key={index}>
+                  <p className="text-white cursor-pointer text-sm duration-500 hover:duration-500 hover:text-purplelight py-1">{item?.attributes?.Nombre_de_Categoria}</p>
                 </Link>
               ))}
             </div>
@@ -45,7 +45,7 @@ export default function Footer({ logoBlanco, galleryData }) {
               {galleryData?.map((item, index) => (
                 <Link href={`/galeria/fotos/noticias/${item.id}`}>
                   <p key={index} className="text-white cursor-pointer text-sm duration-500 hover:duration-500 hover:text-purplelight py-1">
-                    {item.attributes.Nombre}
+                    {item?.attributes?.Nombre}
                   </p>
                 </Link>
               ))}

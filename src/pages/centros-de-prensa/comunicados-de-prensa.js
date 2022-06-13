@@ -27,14 +27,14 @@ export default function ComunicadosPrensa() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {data?.map(
             (item, index) =>
-              item.attributes.Nombre && (
+              item?.attributes?.Nombre && (
                 <div key={index} style={{ animation: 'fadeIn 1s ease-in both' }}>
                   <Card
-                    idNotice={item.id}
-                    title={item.attributes.Nombre}
+                    idNotice={item?.id}
+                    title={item?.attributes?.Nombre}
                     typeCentroPrensa="comunicadosdeprensa"
-                    description={item.attributes.Descripcion}
-                    imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
+                    description={item?.attributes?.Descripcion}
+                    imageUrl={`${API_URL}${item?.attributes?.Imagen_Principal?.data?.attributes?.url}`}
                   />
                 </div>
               )

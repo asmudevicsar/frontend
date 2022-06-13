@@ -51,14 +51,14 @@ export default function BannerHome() {
       {banners?.map((item, index) => {
         return (
           <div
-            style={{ backgroundImage: 'url(' + API_URL + item.attributes.Imagen.data.attributes.url + ')' }}
-            key={item.attributes.Titulo}
+            style={{ backgroundImage: 'url(' + API_URL + item?.attributes?.Imagen?.data?.attributes.url + ')' }}
+            key={item?.attributes?.Titulo}
             className={slideIndex === index + 1 ? 'slide active-anim image-banner' : 'slide image-banner '}
           >
             <div className="box-cell">
               <div className="center-data">
-                <h3 className="text-white text-xl sm:text-5xl xl:text-6xl font-bold">{item.attributes.Titulo}</h3>
-                <p className="text-sm sm:text-3xl font-medium text-white mt-2">{item.attributes.Descripcion}</p>
+                <h3 className="text-white text-xl sm:text-5xl xl:text-6xl font-bold">{item?.attributes?.Titulo}</h3>
+                <p className="text-sm sm:text-3xl font-medium text-white mt-2">{item?.attributes?.Descripcion}</p>
               </div>
             </div>
           </div>

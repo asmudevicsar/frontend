@@ -18,16 +18,16 @@ export default function UlStyle({ hasClassMenuItemsResponsive, onButtonClick }) 
       const responseProjects = await getProjects();
       responseCategories?.map((item) => {
         responseProjects?.map((element) => {
-          if (element?.attributes?.Categoria_del_proyecto?.data?.attributes?.Nombre_de_Categoria == item.attributes.Nombre_de_Categoria) {
+          if (element?.attributes?.Categoria_del_proyecto?.data?.attributes?.Nombre_de_Categoria == item?.attributes?.Nombre_de_Categoria) {
             arrCategories.push({
-              urlName: item.attributes.Nombre_de_Categoria.trim()
+              urlName: item?.attributes?.Nombre_de_Categoria.trim()
                 .toLowerCase()
                 .normalize('NFD')
                 .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi, '$1')
                 .normalize()
                 .trim()
                 .replace(/ /g, ''),
-              namecategory: item.attributes.Nombre_de_Categoria,
+              namecategory: item?.attributes?.Nombre_de_Categoria,
               idCategory: item.id,
             });
           }

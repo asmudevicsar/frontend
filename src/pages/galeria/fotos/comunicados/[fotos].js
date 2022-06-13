@@ -66,7 +66,7 @@ export default function GalleryComunicadosDetail() {
             (item, index) =>
               index != 0 && (
                 <div key={index}>
-                  <img className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500" onClick={openModal} src={`${API_URL}${item.attributes.url}`} />
+                  <img className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500" onClick={openModal} src={`${API_URL}${item?.attributes?.url}`} />
                 </div>
               )
           )}

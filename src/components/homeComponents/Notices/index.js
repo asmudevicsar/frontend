@@ -27,11 +27,11 @@ export default function Notices() {
           <div className="container notices-home sm:gap-6 columns-1 grid grid-cols-1  lg:grid-cols-3 p-3 sm:p-0">
             {data?.map((item, index) => (
               <div key={index} className="bg-white rounded-sm duration-500 hover:drop-shadow-xl hover:duration-500 border border-[#E6E6E6] cursor-pointer">
-                <Image width="600" height="280" className="w-full h-48" src={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`} />
+                <Image width="600" height="280" className="w-full h-48" src={`${API_URL}${item?.attributes?.Imagen_Principal?.data?.attributes?.url}`} />
                 <div className="p-3 sm:p-7 pb-0">
-                  <h3 className="text-center font-medium text-purpledark text-2xl">{item.attributes.Nombre}</h3>
+                  <h3 className="text-center font-medium text-purpledark text-2xl">{item?.attributes.Nombre}</h3>
                   <div className="bg-purpledark d-block w-10 h-0.5 mx-auto my-3"></div>
-                  <div className="text-base data-div font-semibold !text-[#606060] w-4/5 m-auto text-center break-words">{parse(item.attributes.Descripcion)}</div>
+                  <div className="text-base data-div font-semibold !text-[#606060] w-4/5 m-auto text-center break-words">{parse(item?.attributes?.Descripcion)}</div>
                   <div className="w-full text-center">
                     <button className="mt-6 mb-8 bg-purpledark drop-shadow-lg h-9 px-4 rounded-md text-white text-sm duration-500 hover:bg-purplelight hover:duration-500 ">Ver Más</button>
                   </div>

@@ -111,7 +111,7 @@ export default function ComunicadosPrensaDetalle() {
                   idNotice={element?.data[0]?.id}
                   title={element?.data[0]?.attributes?.Nombre}
                   description={element?.data[0]?.attributes?.Descripcion}
-                  imageUrl={`${API_URL}${element?.data[0]?.attributes?.Imagen_Principal.data.attributes.url}`}
+                  imageUrl={`${API_URL}${element?.data[0]?.attributes?.Imagen_Principal?.data?.attributes?.url}`}
                   typeCentroPrensa="comunicadosdeprensa"
                 />
               )

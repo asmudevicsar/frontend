@@ -14,20 +14,20 @@ export default function BannerInterno({ title, img, description }) {
       /* Obtener los datos de la API y luego mapearlos para obtener los datos que necesito. */
       const response = await getBannersInternos();
       response?.data?.map((item) => {
-        if (item.attributes.Pagina.data?.attributes.Nombre == 'Quienes Somos' && query.pathname.includes('/quienes-somos')) {
-          setDataBanner(item.attributes);
+        if (item?.attributes?.Pagina?.data?.attributes?.Nombre == 'Quienes Somos' && query.pathname.includes('/quienes-somos')) {
+          setDataBanner(item?.attributes);
         }
-        if (item.attributes.Pagina.data?.attributes.Nombre == 'Proyectos' && query.pathname.includes('/proyectos')) {
-          setDataBanner(item.attributes);
+        if (item?.attributes?.Pagina?.data?.attributes?.Nombre == 'Proyectos' && query.pathname.includes('/proyectos')) {
+          setDataBanner(item?.attributes);
         }
-        if (item.attributes.Pagina.data?.attributes.Nombre == 'Galeria' && query.pathname.includes('/galeria')) {
-          setDataBanner(item.attributes);
+        if (item.attributes?.Pagina?.data?.attributes?.Nombre == 'Galeria' && query.pathname.includes('/galeria')) {
+          setDataBanner(item?.attributes);
         }
-        if (item.attributes.Pagina.data?.attributes.Nombre == 'Eventos y Noticias' && query.pathname.includes('/centros-de-prensa/eventos-y-noticias')) {
-          setDataBanner(item.attributes);
+        if (item?.attributes?.Pagina?.data?.attributes?.Nombre == 'Eventos y Noticias' && query.pathname.includes('/centros-de-prensa/eventos-y-noticias')) {
+          setDataBanner(item?.attributes);
         }
-        if (item.attributes.Pagina.data?.attributes.Nombre == 'Comunicados de Prensa' && query.pathname.includes('/centros-de-prensa/comunicados-de-prensa')) {
-          setDataBanner(item.attributes);
+        if (item?.attributes?.Pagina?.data?.attributes?.Nombre == 'Comunicados de Prensa' && query.pathname.includes('/centros-de-prensa/comunicados-de-prensa')) {
+          setDataBanner(item?.attributes);
         }
       });
       const responseBannersInternoProjects = await getBannersInternosCategory();
@@ -35,7 +35,7 @@ export default function BannerInterno({ title, img, description }) {
       responseBannersInternoProjects?.data?.map((itemProject, index) => {
         if (
           query.asPath.includes(
-            `/proyectos/${itemProject?.attributes?.Categorias_de_proyectos?.data?.attributes.Nombre_de_Categoria.trim()
+            `/proyectos/${itemProject?.attributes?.Categorias_de_proyectos?.data?.attributes?.Nombre_de_Categoria.trim()
               .toLowerCase()
               .normalize('NFD')
               .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi, '$1')

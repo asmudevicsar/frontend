@@ -43,9 +43,9 @@ export default function CarrouselDescriptions() {
             {data?.map((item, index) => (
               <SwiperSlide key={index}>
                 <BannerWithImageLeft
-                  imageLeft={`${API_URL}${item.attributes.Imagen_Izquierda.data.attributes.url}`}
-                  description={item.attributes.Texto_Descripcion}
-                  backgroundImageData={`${API_URL}${item.attributes.Imagen_de_fondo.data.attributes.url}`}
+                  imageLeft={`${API_URL}${item?.attributes?.Imagen_Izquierda?.data?.attributes?.url}`}
+                  description={item?.attributes?.Texto_Descripcion}
+                  backgroundImageData={`${API_URL}${item?.attributes?.Imagen_de_fondo?.data?.attributes?.url}`}
                 />
               </SwiperSlide>
             ))}

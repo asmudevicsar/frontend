@@ -50,7 +50,7 @@ export default function Partners() {
           >
             {data?.map((item, index) => (
               <SwiperSlide key={index}>
-                <img alt="image" className="rounded-full w-28	h-28 m-auto" src={`${API_URL}${item.attributes.Imagen.data.attributes.url}`} />
+                <img alt="image" className="rounded-full w-28	h-28 m-auto" src={`${API_URL}${item?.attributes?.Imagen?.data?.attributes?.url}`} />
               </SwiperSlide>
             ))}
           </Swiper>

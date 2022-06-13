@@ -24,14 +24,14 @@ export default function QuienesSomos() {
       <Seo title="Quíenes somos" description="Quíenes somos" />
       <BannerInterno />
       <AnimationOnScroll initiallyVisible={true} offset={0} animateIn="animate__fadeInLeftBig">
-        <Origen description={data?.Origen} title={data?.Titulo_Origen_Pagina_Quienes_Somos} image={`${API_URL}${data?.Imagen_Origen.data.attributes.url}`} />
+        <Origen description={data?.Origen} title={data?.Titulo_Origen_Pagina_Quienes_Somos} image={`${API_URL}${data?.Imagen_Origen.data.attributes?.url}`} />
       </AnimationOnScroll>
       <AnimationOnScroll initiallyVisible={false} offset={0} animateIn="animate__fadeInLeftBig">
         <NuestraHistoria
           title={data?.Titulo_Nuestra_Historia_Pagina_Quienes_Somos}
           description={data?.Nuestra_Historia}
           date={data?.Fecha_Creacion_Asociacion}
-          image={`${API_URL}${data?.Imagen_Nuestra_Historia.data.attributes.url}`}
+          image={`${API_URL}${data?.Imagen_Nuestra_Historia?.data?.attributes?.url}`}
         />
       </AnimationOnScroll>
       <AnimationOnScroll initiallyVisible={false} offset={0} animateIn="animate__fadeInLeftBig">

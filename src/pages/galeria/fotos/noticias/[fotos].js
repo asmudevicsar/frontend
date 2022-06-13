@@ -57,7 +57,7 @@ export default function GalleryNoticiasDetail() {
           className="w-full h-96 cursor-pointer darken-image duration-500 hover:duration-500"
           onClick={openModal}
           alt="image"
-          src={`${API_URL}${fotosData[0]?.attributes?.Galeria_de_imagenes?.data[0]?.attributes.url}`}
+          src={`${API_URL}${fotosData[0]?.attributes?.Galeria_de_imagenes?.data[0]?.attributes?.url}`}
         />
       )}
       {fotosData?.length > 0 ? (
@@ -66,7 +66,7 @@ export default function GalleryNoticiasDetail() {
             (item, index) =>
               index != 0 && (
                 <div key={index}>
-                  <img className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500" onClick={openModal} alt="image" src={`${API_URL}${item.attributes.url}`} />
+                  <img className="w-full h-44 cursor-pointer darken-image duration-500 hover:duration-500" onClick={openModal} alt="image" src={`${API_URL}${item?.attributes?.url}`} />
                 </div>
               )
           )}

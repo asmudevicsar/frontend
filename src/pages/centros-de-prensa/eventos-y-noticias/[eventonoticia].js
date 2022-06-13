@@ -88,7 +88,7 @@ export default function EventosNoticiasDetalle() {
       <div className="container grid evento-noticia grid-cols-2 lg:grid-cols-8 lg:gap-10 h-full mb-0">
         <div className="col-span-6">
           <div className="bg-white mb-12 border-2 rounded-sm border border-[#E6E6E6]">
-            <img className="w-full !h-76 sm:!h-96" alt="image" src={`${API_URL}${eventoNoticia?.attributes?.Imagen_Principal.data.attributes.url}`} />
+            <img className="w-full !h-76 sm:!h-96" alt="image" src={`${API_URL}${eventoNoticia?.attributes?.Imagen_Principal?.data?.attributes?.url}`} />
             <div className="p-3 sm:p-9 pb-0">
               <div className=" justify-between">
                 <h3 className="text-left font-medium text-purpledark text-2xl">{eventoNoticia?.attributes?.Nombre}</h3>
@@ -109,7 +109,7 @@ export default function EventosNoticiasDetalle() {
                   idNotice={element?.data[0]?.id}
                   title={element?.data[0]?.attributes?.Nombre}
                   description={element?.data[0]?.attributes?.Descripcion}
-                  imageUrl={`${API_URL}${element?.data[0]?.attributes?.Imagen_Principal.data.attributes.url}`}
+                  imageUrl={`${API_URL}${element?.data[0]?.attributes?.Imagen_Principal?.data?.attributes?.url}`}
                 />
               )
           )}

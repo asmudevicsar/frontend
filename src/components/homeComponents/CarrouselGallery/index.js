@@ -40,7 +40,7 @@ export default function CarrouselGallery() {
           {data?.map((item, index) =>
             item?.attributes?.Galeria_de_imagenes?.data?.map((image, indexGallery) => (
               <SwiperSlide key={index + indexGallery}>
-                <img className="w-full carrousel-gallery" src={`${API_URL}${image.attributes.url}`} alt={`${API_URL}${image.attributes.url}`} />
+                <img className="w-full carrousel-gallery" src={`${API_URL}${image?.attributes?.url}`} alt={`${API_URL}${image?.attributes?.url}`} />
               </SwiperSlide>
             ))
           )}

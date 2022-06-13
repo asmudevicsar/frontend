@@ -39,12 +39,12 @@ export default function Gallery() {
               item?.attributes?.Galeria_de_imagenes?.data?.length > 0 && (
                 <div key={index} style={{ animation: 'fadeIn 1s ease-in both' }}>
                   <Card
-                    galleryType={item.attributes.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}
+                    galleryType={item?.attributes?.Categoria_Evento_Noticia ? 'noticia' : 'comunicado'}
                     isGallery={true}
-                    idGallery={item.id}
-                    idNotice={item.id}
-                    title={item.attributes.Nombre}
-                    imageUrl={`${API_URL}${item.attributes.Imagen_Principal.data.attributes.url}`}
+                    idGallery={item?.id}
+                    idNotice={item?.id}
+                    title={item?.attributes?.Nombre}
+                    imageUrl={`${API_URL}${item?.attributes?.Imagen_Principal?.data?.attributes?.url}`}
                   />
                 </div>
               )

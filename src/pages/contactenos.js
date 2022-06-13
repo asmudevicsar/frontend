@@ -88,7 +88,7 @@ export default function Contactenos() {
     <>
     <Seo title="Contacto" description="Podrás contactanos"/>
     <div
-      style={{ backgroundImage: `url(${contactData && API_URL + contactData[0].attributes.Imagen_de_Fondo.data.attributes.url})` }}
+      style={{ backgroundImage: `url(${contactData && API_URL + contactData[0]?.attributes?.Imagen_de_Fondo?.data?.attributes?.url})` }}
       className={'contactenos relative mt-8 lg:mt-24 banner-interno active-anim image-banner h-52'}
     >
       <div className="content-image">

@@ -29,7 +29,7 @@ export default function ProjectDetail() {
     (async () => {
       const response = await getProjectById(query.query.project);
       const responseCategoryData = await getProjectsAll(response?.data[0]?.attributes?.Categoria_del_proyecto?.data?.id);
-      responseCategoryData.data?.map((itemcategory) => arrIdProjects.push(itemcategory.id));
+      responseCategoryData.data?.map((itemcategory) => arrIdProjects.push(itemcategory?.id));
 
       if (arrIdProjects.length > 0) {
         positionCurrently = arrIdProjects.findIndex((item) => item == query.query.project);
