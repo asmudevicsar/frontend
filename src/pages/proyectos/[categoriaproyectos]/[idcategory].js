@@ -7,7 +7,7 @@ import BannerInterno from '@components/generalComponents/BannerInterno';
 import { useRouter } from 'next/router';
 
 import { API_URL } from 'utils/constants';
-import { getProjectsMaxSixByCategory } from 'api/projectsAPI';
+import { getProjectsAll, getProjectsMaxSixByCategory } from 'api/projectsAPI';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import HTMLReactParser from 'html-react-parser';
 import Seo from '@components/seo';
