@@ -129,7 +129,7 @@ export default function ProjectDetail() {
               </Swiper>
             </div>
             <div className="mx-4 sm:mx-0">
-              <h2 className="font-bold text-3xl text-purpledark">{data?.attributes?.Titulo}</h2>
+              <h2 className="font-bold text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
               <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
             </div>
           </div>

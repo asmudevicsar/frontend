@@ -24,7 +24,7 @@ export default function QuienesSomos() {
       <Seo title="Quíenes somos" description="Quíenes somos" />
       <BannerInterno />
       <AnimationOnScroll initiallyVisible={true} offset={0} animateIn="animate__fadeInLeftBig">
-        <Origen description={data?.Origen} title={data?.Titulo_Origen_Pagina_Quienes_Somos} image={`${API_URL}${data?.Imagen_Origen.data.attributes?.url}`} />
+        <Origen description={data?.Origen} title={data?.Titulo_Origen_Pagina_Quienes_Somos} image={`${API_URL}${data?.Imagen_Origen?.data?.attributes?.url}`} />
       </AnimationOnScroll>
       <AnimationOnScroll initiallyVisible={false} offset={0} animateIn="animate__fadeInLeftBig">
         <NuestraHistoria
@@ -41,7 +41,6 @@ export default function QuienesSomos() {
           imageObjetivos={`${API_URL}${data?.Objetivos_Imagen.data?.attributes?.url}`}
           title={data?.Titulo_QuienesSomos_Pagina_Quienes_Somos}
           description={data?.Quienes_Somos}
-          objetivos={data?.Objetivos}
           vision={data?.Vision}
           mision={data?.Mision}
         />

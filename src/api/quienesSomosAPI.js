@@ -34,5 +34,17 @@ export async function getIdentidadOrganizativa() {
     return null;
   }
 }
+export async function getInformesCorporativos() {
+  try {
+    const url = `${API_URL}/api/informe-corporativo-mensuals?populate=*`;
+    const response = await fetch(url);
+    const result = await response.json();
+    return result.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
 
 

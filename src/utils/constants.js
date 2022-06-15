@@ -1,1 +1,1 @@
-export const API_URL = 'https://www.adminasmudevicsar.info';
+export const API_URL = 'https://adminasmudevicsar.info';

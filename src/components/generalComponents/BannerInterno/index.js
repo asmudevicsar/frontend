@@ -29,9 +29,12 @@ export default function BannerInterno({ title, img, description }) {
         if (item?.attributes?.Pagina?.data?.attributes?.Nombre == 'Comunicados de Prensa' && query.pathname.includes('/centros-de-prensa/comunicados-de-prensa')) {
           setDataBanner(item?.attributes);
         }
+        if (item?.attributes?.Pagina?.data?.attributes?.Nombre == 'Informe Corporativo Mensual' && query.pathname.includes('/quienes-somos/informe-corporativo-mensual')) {
+          setDataBanner(item?.attributes);
+        }
       });
       const responseBannersInternoProjects = await getBannersInternosCategory();
-  
+
       responseBannersInternoProjects?.data?.map((itemProject, index) => {
         if (
           query.asPath.includes(
@@ -51,7 +54,10 @@ export default function BannerInterno({ title, img, description }) {
     })();
   }, [query]);
   return dataBanner ? (
-    <div style={{ backgroundImage: `url(${API_URL}${dataBanner?.Imagen_de_fondo?.data[0] ? dataBanner?.Imagen_de_fondo?.data[0]?.attributes?.url: dataBanner?.Imagen_de_fondo?.data?.attributes?.url})` }} className={'relative mt-8 lg:mt-24 banner-interno active-anim image-banner h-52'}>
+    <div
+      style={{ backgroundImage: `url(${API_URL}${dataBanner?.Imagen_de_fondo?.data[0] ? dataBanner?.Imagen_de_fondo?.data[0]?.attributes?.url : dataBanner?.Imagen_de_fondo?.data?.attributes?.url})` }}
+      className={'relative mt-8 lg:mt-24 banner-interno active-anim image-banner h-52'}
+    >
       <div className="content-image">
         <div className="!w-full center-data  md:!w-3/4 lg:!w-1/2">
           <h3 className=" text-center font-bold text-xl sm:text-4xl text-white">{dataBanner?.Titulo}</h3>
