@@ -20,7 +20,7 @@ header ul li:last-child {
 header ul li a {
   text-decoration: none;
   padding: 0 20px;
-  width: 300px;
+  width: 350px;
 }
 header ul li ul {
   position: absolute;
@@ -28,7 +28,7 @@ header ul li ul {
   left: 21px;
   background: #fff;
   display: block;
-  width: 300px;
+  width: 350px;
   transition: 0.5s;
   opacity: 0;
   visibility: hidden;

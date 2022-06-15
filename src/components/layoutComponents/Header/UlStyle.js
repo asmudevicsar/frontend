@@ -78,6 +78,7 @@ export default function UlStyle({ hasClassMenuItemsResponsive, onButtonClick }) 
                 <span className={`ml-2 title-responsive title-responsive ${query.pathname.includes('/quienes-somos') && ' active '} cursor-pointer`}>Quienes Sómos</span>
               </a>
             )}
+            <FaCaretDown className="ml-1" />
           </div>
           <ul className="subitem z-10 border-t-purpledark border-t-3 rounded-bl-2xl">
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
