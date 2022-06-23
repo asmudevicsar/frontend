@@ -25,7 +25,7 @@ export async function getIdentidadCorporativa() {
 
 export async function getIdentidadOrganizativa() {
   try {
-    const url = `${API_URL}/api/identidad-organizativas?populate=*`;
+    const url = `${API_URL}/api/identidad-organizativas?sort[0]=createdAt:desc&populate=*`;
     const response = await fetch(url);
     const result = await response.json();
     return result.data[0];
@@ -36,7 +36,7 @@ export async function getIdentidadOrganizativa() {
 }
 export async function getInformesCorporativos() {
   try {
-    const url = `${API_URL}/api/informe-corporativo-mensuals?populate=*`;
+    const url = `${API_URL}/api/informe-corporativo-mensuals?sort[0]=createdAt:desc&populate=*`;
     const response = await fetch(url);
     const result = await response.json();
     return result.data;

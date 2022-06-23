@@ -12,7 +12,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
-import { EffectFade, Autoplay, Navigation } from 'swiper';
+import 'swiper/css/free-mode';
+
+import 'swiper/css/thumbs';
+import { EffectFade, Autoplay, Navigation, Pagination, FreeMode, Thumbs } from 'swiper';
 import { API_URL } from 'utils/constants';
 import HTMLReactParser from 'html-react-parser';
 import Seo from '@components/seo';
@@ -21,15 +24,17 @@ export default function ProjectDetail() {
   const [data, setData] = useState(null);
   const [idNoticeBefore, setIdNoticeBefore] = useState(0);
   const [idNoticeAfter, setIdNoticeAfter] = useState(0);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const arrIdProjects = [];
   const query = useRouter();
+  console.log('llego query=>', query);
   let positionCurrently = 0;
   useEffect(() => {
     (async () => {
       const response = await getProjectById(query.query.project);
       const responseCategoryData = await getProjectsAll(response?.data[0]?.attributes?.Categoria_del_proyecto?.data?.id);
-      responseCategoryData.data?.map((itemcategory) => arrIdProjects.push(itemcategory?.id));
+      responseCategoryData?.data?.map((itemcategory) => arrIdProjects.push(itemcategory?.id));
 
       if (arrIdProjects.length > 0) {
         positionCurrently = arrIdProjects.findIndex((item) => item == query.query.project);
@@ -104,35 +109,158 @@ export default function ProjectDetail() {
               </div>
             </div>
           )}
+          {query?.query?.categoriaproyectos?.includes('vivienda') ? (
+            <div className="my-2 sm:my-16 min-height-project-vivienda">
+              <h2 className="font-bold text-center text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
 
-          <div className="my-2 sm:my-16">
-            <div className="topSpacerDiv"></div>
-            <div className="image-left-projects">
-              <Swiper
-                slidesPerView={1}
-                autoplay={{
-                  delay: 6000,
-                  disableOnInteraction: false,
-                }}
-                effect={'fade'}
-                spaceBetween={1}
-                loop={true}
-                navigation={true}
-                modules={[EffectFade, Autoplay, Navigation]}
-                className="mySwiper"
-              >
-                {data?.attributes?.Imagenes?.data?.map((image, index) => (
-                  <SwiperSlide key={index} className=" float-left p-3">
-                    <img className="w-full projects carrousel-gallery" alt="image" src={`${API_URL}${image.attributes.url}`} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              <div className="topSpacerDiv"></div>
+              <div className="image-rigth-projects ml-0 sm:ml-5 ">
+                <Swiper
+                  style={{
+                    '--swiper-navigation-color': '#fff',
+                    '--swiper-pagination-color': '#fff',
+                  }}
+                  loop={true}
+                  spaceBetween={10}
+                  navigation={true}
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  thumbs={{ swiper: thumbsSwiper }}
+                  modules={[FreeMode, Navigation, Thumbs, Autoplay]}
+                  className="mySwiper2"
+                >
+                  {data?.attributes?.Imagenes?.data?.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img className="w-full projects carrousel-gallery-right" alt="image" src={`${API_URL}${image.attributes.url}`} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <Swiper
+                  onSwiper={setThumbsSwiper}
+                  loop={true}
+                  spaceBetween={10}
+                  slidesPerView={4}
+                  freeMode={true}
+                  watchSlidesProgress={true}
+                  modules={[FreeMode, Navigation, Thumbs]}
+                  className="mySwiper"
+                >
+                  {data?.attributes?.Imagenes?.data?.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img className="w-full h-16" alt="image" src={`${API_URL}${image.attributes.url}`} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              <div className="mx-4 sm:mx-0">
+                <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
+              </div>
             </div>
-            <div className="mx-4 sm:mx-0">
-              <h2 className="font-bold text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
-              <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
+          ) : query?.query?.categoriaproyectos?.includes('ingresos') ? (
+            <div className="my-2 sm:my-16 min-height-project">
+              <h2 className="font-bold text-3xl text-center text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
+
+              <div className="topSpacerDiv"></div>
+              <div>
+                <Swiper
+                  slidesPerView={1}
+                  spaceBetween={10}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  breakpoints={{
+                    640: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                      spaceBetween: 40,
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 50,
+                    },
+                  }}
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  modules={[Pagination, Autoplay]}
+                  className="mySwiper"
+                >
+                  {data?.attributes?.Imagenes?.data?.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img className="w-full projects carrousel-gallery cursor " alt="image" src={`${API_URL}${image.attributes.url}`} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              <div className="mx-4 sm:mx-0 mt-14">
+                <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
+              </div>
             </div>
-          </div>
+          ) : query?.query?.categoriaproyectos?.includes('derechoshumanos') ? (
+            <div className="my-2 sm:my-16 min-height-project">
+              <div className="topSpacerDiv"></div>
+              <div className="image-rigth-projects">
+                <Swiper
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 6000,
+                    disableOnInteraction: false,
+                  }}
+                  effect={'fade'}
+                  spaceBetween={1}
+                  loop={true}
+                  navigation={true}
+                  modules={[EffectFade, Autoplay, Navigation]}
+                  className="mySwiper"
+                >
+                  {data?.attributes?.Imagenes?.data?.map((image, index) => (
+                    <SwiperSlide key={index} className=" float-left p-3">
+                      <img className="w-full projects carrousel-gallery-right" alt="image" src={`${API_URL}${image.attributes.url}`} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              <div className="mx-4 sm:mx-0">
+                <h2 className="font-bold text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
+                <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
+              </div>
+            </div>
+          ) : (
+            <div className="my-2 sm:my-16 min-height-project">
+              <div className="topSpacerDiv"></div>
+              <div className="image-left-projects">
+                <Swiper
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 6000,
+                    disableOnInteraction: false,
+                  }}
+                  effect={'fade'}
+                  spaceBetween={1}
+                  loop={true}
+                  navigation={true}
+                  modules={[EffectFade, Autoplay, Navigation]}
+                  className="mySwiper"
+                >
+                  {data?.attributes?.Imagenes?.data?.map((image, index) => (
+                    <SwiperSlide key={index} className=" float-left p-3">
+                      <img className="w-full projects carrousel-gallery" alt="image" src={`${API_URL}${image.attributes.url}`} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              <div className="mx-4 sm:mx-0">
+                <h2 className="font-bold text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
+                <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

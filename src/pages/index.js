@@ -15,7 +15,7 @@ import Seo from '@components/seo';
 export default function Home() {
   return (
     <>
-      <Seo title="Página Principal" description="Asociación de mujeres desplazadas y víctimas del conflicto armado" />
+      <Seo title="ASMUDEVICSAR | Página Principal" description="Asociación de mujeres desplazadas y víctimas del conflicto armado" />
       <BannerHome />
 
       <AnimationOnScroll initiallyVisible={false} offset={0} animateIn="animate__fadeInLeftBig">

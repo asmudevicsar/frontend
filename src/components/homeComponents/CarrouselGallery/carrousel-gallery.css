@@ -5,8 +5,28 @@
 .swiper-button-prev {
   color: white !important;
 }
+.projects.carrousel-gallery.cursor {
+  cursor: pointer;
+}
+.projects.carrousel-gallery-right {
+  height: 450px;
+  width: 100%;
+  filter: brightness(70%);
+}
+.min-height-project {
+  min-height: 550px;
+}
+.swiper-horizontal.swiper-pointer-events.swiper-free-mode {
+  margin-top: 10px;
+}
+.swiper-slide.swiper-slide-visible {
+  cursor: pointer;
+}
+.swiper-slide.swiper-slide-visible.swiper-slide-prev {
+  cursor: pointer;
+}
 .projects.carrousel-gallery {
-  height: 320px;
+  height: 380px;
   width: 100%;
   filter: brightness(70%);
 }
@@ -26,6 +46,12 @@ div.topSpacerDiv {
   height: auto;
   width: 450px;
 }
+.image-rigth-projects {
+  float: right;
+
+  height: auto;
+  width: 500px;
+}
 .project-descripcion span {
   color: #606060 !important;
   font-weight: 400;
@@ -33,18 +59,28 @@ div.topSpacerDiv {
 .project-descripcion .swiper-button-prev {
   border: 3px solid;
   right: 120px;
-    left: auto;
-    bottom: 61px;
-    top: auto;
-    padding: 26px;
+  left: auto;
+  bottom: 61px;
+  top: auto;
+  padding: 23px;
+  transition: 0.5s;
 }
 .project-descripcion .swiper-button-next {
   border: 3px solid;
   right: 49px;
-    left: auto;
-    bottom: 61px;
-    top: auto;
-    padding: 26px;
+  left: auto;
+  bottom: 61px;
+  top: auto;
+  padding: 23px;
+  transition: 0.5s;
+}
+.project-descripcion .swiper-button-prev:hover {
+  transition: 0.5s;
+  background-color: #606060;
+}
+.project-descripcion .swiper-button-next:hover {
+  transition: 0.5s;
+  background-color: #606060;
 }
 .project-descripcion {
   color: #606060 !important;
@@ -52,8 +88,22 @@ div.topSpacerDiv {
   line-height: 1.75rem;
 }
 @media screen and (max-width: 640px) {
+  .swiper-free-mode {
+    height: 100px!important;
+  }
+  .projects.carrousel-gallery-right {
+    height: 278px;
+  }
+  .project-descripcion .swiper-button-next {
+    bottom: 30px;
+    right: 28px;
+  }
+  .project-descripcion .swiper-button-prev {
+    right: 91px;
+    bottom: 30px;
+  }
   .partners .swiper {
-    height: 140px!important;
+    height: 140px !important;
   }
   .swiper {
     height: 300px;
@@ -61,10 +111,13 @@ div.topSpacerDiv {
   .carrousel-gallery {
     height: 100%;
   }
-  .image-left-projects{
+  .image-left-projects {
     width: 100%;
   }
-  .projects.carrousel-gallery{
+  .image-rigth-projects {
+    width: 100%;
+  }
+  .projects.carrousel-gallery {
     height: 257px;
   }
 }
