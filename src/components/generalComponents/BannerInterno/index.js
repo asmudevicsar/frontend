@@ -60,7 +60,7 @@ export default function BannerInterno({ title, img, description }) {
     >
       <div className="content-image">
         <div className="!w-full center-data  md:!w-3/4 lg:!w-1/2">
-          <h3 className=" text-center font-bold text-xl sm:text-4xl text-white">{dataBanner?.Titulo}</h3>
+          <h3 className=" text-center font-bold text-xl sm:text-4xl text-white">{title ? title : dataBanner?.Titulo}</h3>
           <p className="mt-3 text-center font-semibold text-sm xl:text-base text-white !leading-5">{dataBanner?.Descripcion}</p>
         </div>
       </div>
