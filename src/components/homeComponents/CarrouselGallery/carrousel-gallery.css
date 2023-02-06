@@ -14,7 +14,7 @@
   filter: brightness(70%);
 }
 .min-height-project {
-  min-height: 550px;
+  min-height: auto;
 }
 .swiper-horizontal.swiper-pointer-events.swiper-free-mode {
   margin-top: 10px;
