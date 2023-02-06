@@ -27,6 +27,9 @@
 .social-links-responsive {
   display: block;
 }
+.min-height-project-vivienda {
+      display: inline-block;
+}
 @media (max-width: 640px) {
   .breadcrumb {
     display: none;
