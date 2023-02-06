@@ -14,7 +14,7 @@ export default function QuienesSomos() {
   }, []);
 
   return (
-    <div className="container grid-container grid grid-cols-1 lg:grid-cols-3 m-4 xl:m-16 quienesomos">
+    <div className="container grid-container grid grid-cols-1 lg:grid-cols-3 m-0 sm:m-4 xl:m-16 quienesomos">
       <div className='p-3 sm:p-0'>
         <h3 className="text-purplelight font-bold text-2xl lg:text-6xl">{data?.Titulo_QuienesSomos_Pagina_Principal}</h3>
         <p className="text-[#606060] text-sm sm:text-lg lg:text-xl mt-4">{data?.Quienes_Somos}</p>
