@@ -32,7 +32,7 @@
 }
 @media (max-width: 640px) {
   .breadcrumb {
-    display: none;
+    display: none!important;
   }
 }
 @media (max-width: 1024px) {
