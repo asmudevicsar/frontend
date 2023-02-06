@@ -16,7 +16,7 @@ export default function CategoriesProject() {
   return (
     <>
       {categoriesProjects && categoriesProjects?.length > 0 && (
-        <div className={`container categoriasproyectos w-full grid-container grid grid-cols-2 sm:grid-cols-${categoriesProjects?.length}  divide-x p-4 divide-[#E8E8E8] m-5 sm:m-10`}>
+        <div className={`container categoriasproyectos w-full grid-container grid grid-cols-2 sm:grid-cols-${categoriesProjects?.length}  divide-x p-4 divide-[#E8E8E8] m-0 sm:m-10`}>
           {categoriesProjects?.map((item, index) => (
             <Link href={`${item?.attributes?.Enlace}`} key={index}>
               <div className="duration-700 hover:bg-[#FBEAF1] hover:duration-700 cursor-pointer py-2">
