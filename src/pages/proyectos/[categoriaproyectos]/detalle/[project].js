@@ -114,6 +114,7 @@ export default function ProjectDetail() {
               <h2 className="font-bold text-center text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
 
               <div className="topSpacerDiv"></div>
+              { data?.attributes?.Imagenes?.data.length > 0 && (
               <div className="image-rigth-projects ml-0 sm:ml-5 ">
                 <Swiper
                   style={{
@@ -154,6 +155,8 @@ export default function ProjectDetail() {
                   ))}
                 </Swiper>
               </div>
+              )
+              }
               <div className="mx-4 sm:mx-0">
                 <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
               </div>
