@@ -82,7 +82,7 @@ export default function UlStyle({ hasClassMenuItemsResponsive, onButtonClick }) 
           </div>
           <ul className="subitem z-10 border-t-purpledark border-t-3 rounded-bl-2xl">
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl">
-              {!hasClassMenuItemsResponsive ? <Link href="/centros-de-prensa/eventos-y-noticias">Inicio</Link> : <a href="/centros-de-prensa/eventos-y-noticias">Inicio</a>}
+              {!hasClassMenuItemsResponsive ? <Link href="/quienes-somos">Inicio</Link> : <a href="/quienes-somos">Inicio</a>}
             </li>
             <li className="py-1 hover:bg-purpledark cursor-pointer hover:text-white rounded-bl-2xl grid">
               {!hasClassMenuItemsResponsive ? <Link href="/quienes-somos/identidad-corporativa">Identidad Corporativa</Link> : <a href="/quienes-somos/identidad-corporativa">Identidad Corporativa</a>}
