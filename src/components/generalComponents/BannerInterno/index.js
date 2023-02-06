@@ -81,7 +81,7 @@ export default function BannerInterno({ title, img, description }) {
       });
     })();
   }, [query]);
-  let backgroundImageMain = dataBanner.Imagen_de_fondo.data[0]
+  let backgroundImageMain = dataBanner?.Imagen_de_fondo?.data[0]
     ? dataBanner?.Imagen_de_fondo?.data[0]?.attributes?.url
     : dataBanner?.Imagen_de_fondo?.data?.attributes?.url;
 
