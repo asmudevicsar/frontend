@@ -92,7 +92,7 @@ export default function Contactenos() {
       className={'contactenos relative mt-8 lg:mt-24 banner-interno active-anim image-banner h-52'}
     >
       <div className="content-image">
-        <div className="container block sm:grid grid-cols-1 lg:grid-cols-3 gap-4 center-data">
+        <div className="container block sm:grid grid-cols-1 lg:grid-cols-3 gap-4 center-data !w-100">
           <div className="col-span-2 w-full m-auto">
             <div className="grid justify-center">
               <h3 className="font-normal text-4xl sm:text-5xl">Contactanos</h3>
