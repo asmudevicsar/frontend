@@ -233,7 +233,7 @@ export default function ProjectDetail() {
                   </div>
                 </div>
               </div>
-              <div className="my-2 sm:my-16 min-height-project">
+              <div className="my-2 sm:my-16 min-height-project responsvie">
                 <div className="topSpacerDiv"></div>
                 <div className="image-left-projects">
                   <Swiper
