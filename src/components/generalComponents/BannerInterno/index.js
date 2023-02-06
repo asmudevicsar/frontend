@@ -53,9 +53,10 @@ export default function BannerInterno({ title, img, description }) {
       });
     })();
   }, [query]);
+  let backgroundImage = dataBanner.Imagen_de_fondo.data[0] ? dataBanner?.Imagen_de_fondo?.data[0]?.attributes?.url : dataBanner?.Imagen_de_fondo?.data?.attributes?.url;
   return dataBanner ? (
     <div
-      style={{ backgroundImage: `url(${API_URL}${dataBanner.Imagen_de_fondo.data[0] ? dataBanner?.Imagen_de_fondo?.data[0]?.attributes?.url : dataBanner?.Imagen_de_fondo?.data?.attributes?.url})` }}
+      style={{ backgroundImage: `url(${API_URL}${backgroundImage})` }}
       className={'relative mt-8 lg:mt-24 banner-interno active-anim image-banner h-52'}
     >
       <div className="content-image">
