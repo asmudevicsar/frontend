@@ -19,9 +19,8 @@ export default function IdentidadOrganizativa() {
         <Seo title="Identidad Organizativa" description="Identidad Organizativa"/>
 
       <BannerInterno
-        title="Identidad Corporativa"
-        img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQNiKhuv0pfwFxwLB2idvrmaubdad0Fp9KYQ&usqp=CAU"
-        description="Quisque nisl metus, placerat nec velit non, elementum ornare quam. Curabitur egestas blandit tempus. Pellentesque condimentum arcu quis consequat convallis. Cras ornare felis in diam gravida, vel auctor ante efficitur."
+        title="Identidad Organizativa"
+      
       />
        <div className="container">
         <nav className="flex mt-2 mb-6 breadcrumb" aria-label="Breadcrumb">
