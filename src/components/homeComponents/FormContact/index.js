@@ -133,7 +133,7 @@ export default function FormContact() {
               </label>
             </div>
             <div className="my-2 text-center m-auto w-full justify-center flex">
-              <ReCAPTCHA sitekey="6LdcuFYkAAAAAJCdPeM9y4g-oZKpgiA8YBxdcF4o" ref={captcha} onChange={onChange} />
+              <ReCAPTCHA sitekey="6LfMvlYkAAAAAJnh4i6XxHOeknDitmZHG3y78Vy5" ref={captcha} onChange={onChange} />
             </div>
             {captchaValid === false && <p className="text-xs !text-[#FF0000] text-center">Por favor acepta el Captcha</p>}
             <div className="w-full text-center mt-6">
