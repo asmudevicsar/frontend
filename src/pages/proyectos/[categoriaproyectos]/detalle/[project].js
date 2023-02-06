@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
-
 import BannerInterno from '@components/generalComponents/BannerInterno';
 import { getProjectById, getProjectsAll } from 'api/projectsAPI';
 // Import Swiper React components
@@ -160,34 +159,7 @@ export default function ProjectDetail() {
                 <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
               </div>
             </div>
-            <div className="my-2 sm:my-16 min-height-project responvie">
-              <div className="topSpacerDiv"></div>
-              <div className="image-left-projects">
-                <Swiper
-                  slidesPerView={1}
-                  autoplay={{
-                    delay: 6000,
-                    disableOnInteraction: false,
-                  }}
-                  effect={'fade'}
-                  spaceBetween={1}
-                  loop={true}
-                  navigation={true}
-                  modules={[EffectFade, Autoplay, Navigation]}
-                  className="mySwiper"
-                >
-                  {data?.attributes?.Imagenes?.data?.map((image, index) => (
-                    <SwiperSlide key={index} className=" float-left p-3">
-                      <img className="w-full projects carrousel-gallery" alt="image" src={`${API_URL}${image.attributes.url}`} />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-              <div className="mx-4 sm:mx-0">
-                <h2 className="font-bold text-3xl text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
-                <div className="content-project">{HTMLReactParser(data?.attributes?.Descripcion ? data?.attributes?.Descripcion : '')}</div>
-              </div>
-            </div>
+            
           ) : query?.query?.categoriaproyectos?.includes('ingresos') ? (
             <div className="my-2 sm:my-16 min-height-project">
               <h2 className="font-bold text-3xl text-center text-purpledark mb-5">{data?.attributes?.Titulo}</h2>
