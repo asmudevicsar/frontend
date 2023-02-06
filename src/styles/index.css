@@ -30,10 +30,19 @@
 .min-height-project-vivienda {
       display: inline-block;
 }
+.min-height-project.responsive{
+  display:none;
+}  
 @media (max-width: 640px) {
   .breadcrumb {
     display: none!important;
   }
+  .min-height-project-vivienda{
+    display:none;
+  }
+  .min-height-project.responsive{
+    display:block;
+  }  
 }
 @media (max-width: 1024px) {
   .logoblanco {
