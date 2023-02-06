@@ -18,7 +18,7 @@ export default function InformeCorporativoMensual() {
 
   return (
     <>
-      <BannerInterno />
+      <BannerInterno title="Informe Corporativo Mensual" />
       <div className="container px-4 sm:px-0 py-4">
         {data?.length > 0 &&
           data?.map((item) => (
